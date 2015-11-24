@@ -1,0 +1,4 @@
+#compdef h
+_files -W ~ -/
+
+# See further documentation in `functions/h`.

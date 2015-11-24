@@ -1,0 +1,10 @@
+#!/bin/zsh
+#
+# This lets you quickly jump into a home directory inside ~.
+#
+# Type:
+#
+#   h <tab>
+#
+
+cd ~/$1
