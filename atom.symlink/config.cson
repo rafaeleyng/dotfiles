@@ -18,8 +18,8 @@
       "vendor"
     ]
     themes: [
-      "unity-ui"
-      "glacier-syntax"
+      "atom-dark-ui"
+      "atom-dark-syntax"
     ]
     hideGitIgnoredFiles: true
     disabledPackages: [
@@ -37,3 +37,4 @@
     showOnStartup: false
   "release-notes":
     viewedVersion: "0.89.0"
+  emmet: {}
