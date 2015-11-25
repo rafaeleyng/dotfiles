@@ -34,3 +34,9 @@ script/bootstrap
 - [z](https://github.com/rupa/z)
 - `h <tab>`, similar to `c <tab>`, a function to go to folders inside my `~` folder (copied from @ryanb [dotfiles](https://github.com/ryanb/dotfiles/blob/master/oh-my-zsh/custom/plugins/rbates/rbates.plugin.zsh))
 - `zsh/prompt.zsh` overrides `prompt_dir` (from `themes/agnoster.zsh-theme` inside oh-my-zsh) function to display only the last part of current working directory
+
+## terminal
+
+My terminal configurations follow [this gist](https://gist.github.com/kevin-smets/8568070) by @kevin-smets, but due to the overriden `prompt_dir` function, it looks like this:
+
+![screen shot 2015-11-25 at 12 25 57 pm](https://cloud.githubusercontent.com/assets/4842605/11399622/bb888f42-936f-11e5-8313-7622511624a3.png)
