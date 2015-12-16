@@ -6,7 +6,7 @@
     fontSize: 15
     softWrapAtPreferredLineLength: true
     softWrap: true
-    preferredLineLength: 120
+    preferredLineLength: 150
     showInvisibles: true
   core:
     ignoredNames: [
@@ -26,6 +26,17 @@
       "background-tips"
       "exception-reporting"
       "metrics"
+      "language-csharp"
+      "language-coffee-script"
+      "language-clojure"
+      "language-c"
+      "language-gfm"
+      "language-go"
+      "language-less"
+      "language-make"
+      "language-mustache"
+      "language-objective-c"
+      "language-toml"
     ]
   "spell-check":
     grammars: [
@@ -38,3 +49,21 @@
   "release-notes":
     viewedVersion: "0.89.0"
   emmet: {}
+".angular.html.text":
+  editor:
+    preferredLineLength: 150
+".clojure.source":
+  editor:
+    preferredLineLength: 150
+".c.source":
+  editor:
+    preferredLineLength: 150
+".cpp.source":
+  editor:
+    preferredLineLength: 150
+".perl.source":
+  editor:
+    preferredLineLength: 150
+".perl6.source":
+  editor:
+    preferredLineLength: 150
