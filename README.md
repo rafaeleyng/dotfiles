@@ -35,6 +35,7 @@ script/bootstrap
 - `d <tab>`, same as `c <tab>`, but with another dir
 - `h <tab>`, similar to `c <tab>`, a function to go to folders inside my `~` folder (copied from @ryanb [dotfiles](https://github.com/ryanb/dotfiles/blob/master/oh-my-zsh/custom/plugins/rbates/rbates.plugin.zsh))
 - `zsh/prompt.zsh` overrides `prompt_dir` (from `themes/agnoster.zsh-theme` inside oh-my-zsh) function to display only the last part of current working directory
+- `intellij`, a script that will open current folder in IntelliJ IDEA in the smartest possible way (adapted from @chrisdarroch [gist](https://gist.github.com/chrisdarroch/7018927))
 
 ## terminal
 
