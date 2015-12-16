@@ -1,8 +1,11 @@
 # shortcut to this dotfiles path is $ZSHDOT
 export ZSHDOT=$HOME/.dotfiles
 
-# your project folder that we can `c [tab]` to
+# your code folder that we can `c [tab]` to
 export PROJECTS=~/code
+
+# your dev stuff (books, hello worlds, workspaces) folder that we can `d [tab]` to
+export PROJECTS_D=~/dev
 
 # Stash your environment variables in ~/.localrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
