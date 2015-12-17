@@ -30,6 +30,10 @@ else
     echo "importing from pom.xml"
     open -a "$IDEA" "pom.xml"
 
+  elif [ -f build.gradle ]; then
+    echo "importing from build.gradle"
+    open -a "$IDEA" "build.gradle"
+
   else
     echo "can't do anything smart, just open IDEA"
     open "$IDEA"
