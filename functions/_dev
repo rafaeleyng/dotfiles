@@ -1,0 +1,4 @@
+#compdef c
+_files -W $DEV -/
+
+# See further documentation in `functions/dev`.
