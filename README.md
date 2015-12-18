@@ -36,7 +36,7 @@ script/bootstrap
 - `h <tab>`, similar to `c <tab>`, a function to go to folders inside my `~` folder (copied from @ryanb [dotfiles](https://github.com/ryanb/dotfiles/blob/master/oh-my-zsh/custom/plugins/rbates/rbates.plugin.zsh))
 - `dev <tab>`, same as `c <tab>`, but with the `dev` folder
 - `zsh/prompt.zsh` overrides `prompt_dir` (from `themes/agnoster.zsh-theme` inside oh-my-zsh) function to display only the last part of current working directory
-- `intellij`, a script that will open current folder in IntelliJ IDEA in the smartest possible way (adapted from @chrisdarroch [gist](https://gist.github.com/chrisdarroch/7018927))
+- `intellij`, to open current folder in IntelliJ IDEA in the smartest possible way (adapted from [@chrisdarroch](https://gist.github.com/chrisdarroch/7018927))
 - `chrome`, `firefox`, `safari` to open the browsers, or with filename to open the file in the browser
 
 ## terminal
