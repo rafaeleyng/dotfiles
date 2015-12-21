@@ -38,6 +38,7 @@ script/bootstrap
 - `zsh/prompt.zsh` overrides `prompt_dir` (from `themes/agnoster.zsh-theme` inside oh-my-zsh) function to display only the last part of current working directory
 - `intellij`, to open current folder in IntelliJ IDEA in the smartest possible way (adapted from [@chrisdarroch](https://gist.github.com/chrisdarroch/7018927))
 - `chrome`, `firefox`, `safari` to open the browsers, or with filename to open the file in the browser
+- `work`, a function that opens all the stuff I have to keep open at work
 
 ## terminal
 
