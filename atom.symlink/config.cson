@@ -37,6 +37,8 @@
       "language-mustache"
       "language-objective-c"
       "language-toml"
+      "angularjs"
+      "angularjs-snippets"
     ]
   "spell-check":
     grammars: [
@@ -49,21 +51,48 @@
   "release-notes":
     viewedVersion: "0.89.0"
   emmet: {}
+  react: {}
+  "language-babel": {}
+  "tree-view": {}
+".js.jsx.react.source":
+  editor:
+    preferredLineLength: 150
+".attribute-values.js.jsx.source":
+  editor:
+    preferredLineLength: 150
+".babel.regexp.source":
+  editor:
+    preferredLineLength: 150
+".coffee.jsx.source":
+  editor:
+    preferredLineLength: 150
 ".angular.html.text":
   editor:
     preferredLineLength: 150
-".clojure.source":
+".css.scss.source":
   editor:
     preferredLineLength: 150
-".c.source":
+".js.source.subtlegradient":
   editor:
     preferredLineLength: 150
-".cpp.source":
+".js.jsx.source":
+  editor:
+    preferredLineLength: 150
+".perl6.source":
   editor:
     preferredLineLength: 150
 ".perl.source":
   editor:
     preferredLineLength: 150
-".perl6.source":
+".cpp.source":
+  editor:
+    preferredLineLength: 150
+".c.source":
+  editor:
+    preferredLineLength: 150
+".clojure.source":
+  editor:
+    preferredLineLength: 150
+".sass.source":
   editor:
     preferredLineLength: 150
