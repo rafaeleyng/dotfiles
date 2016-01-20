@@ -27,8 +27,8 @@ else
     open -a "$RUBY_MINE" `ls -1d *.ipr | head -n1`
 
   else
-    echo "can't do anything smart, just open RUBY_MINE"
-    open "$RUBY_MINE"
-
+    echo "can't do anything smart, just open RubyMine in current folder"
+    open -a "$RUBY_MINE" .
+    
   fi
 fi
