@@ -1,27 +1,5 @@
 "*":
-  editor:
-    showIndentGuide: true
-    fontFamily: "Menlo"
-    invisibles: {}
-    fontSize: 15
-    softWrapAtPreferredLineLength: true
-    softWrap: true
-    preferredLineLength: 150
-    showInvisibles: true
   core:
-    ignoredNames: [
-      ".bundle"
-      ".git"
-      "log"
-      "repositories"
-      "tmp"
-      "vendor"
-    ]
-    themes: [
-      "atom-dark-ui"
-      "atom-dark-syntax"
-    ]
-    hideGitIgnoredFiles: true
     disabledPackages: [
       "background-tips"
       "exception-reporting"
@@ -40,21 +18,46 @@
       "angularjs"
       "angularjs-snippets"
     ]
+    hideGitIgnoredFiles: true
+    ignoredNames: [
+      ".bundle"
+      ".git"
+      "log"
+      "repositories"
+      "tmp"
+      "vendor"
+    ]
+    themes: [
+      "atom-dark-ui"
+      "atom-dark-syntax"
+    ]
+  editor:
+    fontFamily: "Menlo"
+    fontSize: 15
+    invisibles: {}
+    preferredLineLength: 150
+    showIndentGuide: true
+    showInvisibles: true
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+  emmet: {}
+  "language-babel": {}
+  react: {}
+  "release-notes":
+    viewedVersion: "0.89.0"
   "spell-check":
     grammars: [
       "text.plain"
       "source.gfm"
       "text.git-commit"
+      "text.plain.null-grammar"
     ]
+  "tree-view": {}
   welcome:
     showOnStartup: false
-  "release-notes":
-    viewedVersion: "0.89.0"
-  emmet: {}
-  react: {}
-  "language-babel": {}
-  "tree-view": {}
-".js.jsx.react.source":
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
+".angular.html.text":
   editor:
     preferredLineLength: 150
 ".attribute-values.js.jsx.source":
@@ -63,34 +66,37 @@
 ".babel.regexp.source":
   editor:
     preferredLineLength: 150
+".c.source":
+  editor:
+    preferredLineLength: 150
+".clojure.source":
+  editor:
+    preferredLineLength: 150
 ".coffee.jsx.source":
-  editor:
-    preferredLineLength: 150
-".angular.html.text":
-  editor:
-    preferredLineLength: 150
-".css.scss.source":
-  editor:
-    preferredLineLength: 150
-".js.source.subtlegradient":
-  editor:
-    preferredLineLength: 150
-".js.jsx.source":
-  editor:
-    preferredLineLength: 150
-".perl6.source":
-  editor:
-    preferredLineLength: 150
-".perl.source":
   editor:
     preferredLineLength: 150
 ".cpp.source":
   editor:
     preferredLineLength: 150
-".c.source":
+".css.scss.source":
   editor:
     preferredLineLength: 150
-".clojure.source":
+".ini.source":
+  editor:
+    preferredLineLength: 150
+".js.jsx.react.source":
+  editor:
+    preferredLineLength: 150
+".js.jsx.source":
+  editor:
+    preferredLineLength: 150
+".js.source.subtlegradient":
+  editor:
+    preferredLineLength: 150
+".perl.source":
+  editor:
+    preferredLineLength: 150
+".perl6.source":
   editor:
     preferredLineLength: 150
 ".sass.source":
