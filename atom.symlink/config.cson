@@ -7,7 +7,6 @@
       "language-csharp"
       "language-coffee-script"
       "language-clojure"
-      "language-c"
       "language-gfm"
       "language-go"
       "language-less"
@@ -17,6 +16,7 @@
       "language-toml"
       "angularjs"
       "angularjs-snippets"
+      "ruby-slim"
     ]
     hideGitIgnoredFiles: true
     ignoredNames: [
@@ -26,6 +26,7 @@
       "repositories"
       "tmp"
       "vendor"
+      "node_modules"
     ]
     themes: [
       "atom-dark-ui"
@@ -33,15 +34,16 @@
     ]
   editor:
     fontFamily: "Menlo"
-    fontSize: 15
     invisibles: {}
-    preferredLineLength: 150
+    preferredLineLength: 250
     showIndentGuide: true
     showInvisibles: true
     softWrap: true
     softWrapAtPreferredLineLength: true
   emmet: {}
   "language-babel": {}
+  "linter-eslint":
+    useGlobalEslint: true
   react: {}
   "release-notes":
     viewedVersion: "0.89.0"
@@ -102,3 +104,6 @@
 ".sass.source":
   editor:
     preferredLineLength: 150
+".shell.source":
+  editor:
+    tabLength: 4
