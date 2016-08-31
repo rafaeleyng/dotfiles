@@ -1,3 +1,5 @@
+# open -a "/Applications/Pomodoro One.app"
 # open -a /Applications/Skype.app
 open -a /Applications/Slack.app
 open -a /Applications/TogglDesktop.app
+open -a /Applications/Spotify.app
