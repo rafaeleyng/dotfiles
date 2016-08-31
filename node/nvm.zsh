@@ -7,7 +7,7 @@ info () {
 if [ -s ~/.nvm/nvm.sh ]
 then
   source ~/.nvm/nvm.sh
-  nvm use stable > /dev/null
+  nvm use 6.3 > /dev/null
 else
   info "Installing nvm"
   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
