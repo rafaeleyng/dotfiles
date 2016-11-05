@@ -4,7 +4,6 @@
 #
 # `dot` handles installation, updates, things like that. Run it periodically
 # to make sure you're on the latest and greatest.
-export ZSHDOT=$HOME/.dotfiles
 
 # Set OS X defaults
 $ZSHDOT/osx/set-defaults.sh
@@ -13,4 +12,4 @@ $ZSHDOT/osx/set-defaults.sh
 brew update
 
 # Install homebrew packages
-$ZSHDOT/homebrew/install.sh 2>&1
+$ZSHDOT/script/install

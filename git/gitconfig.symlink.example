@@ -6,13 +6,6 @@
 [credential]
   helper = GIT_CREDENTIAL_HELPER
 [alias]
-  l = log --pretty=format:'%h %ad | [%an] %s%d' --graph --date=short
-  la = log --pretty=format:'%h %ad | [%an] %s%d' --graph --date=short --all
-  cm = commit -m
-  s = status
-  b = branch
-  d = diff
-  co = checkout
   promote = !$ZSHDOT/bin/git-promote
   wtf     = !$ZSHDOT/bin/git-wtf
   rank-contributors = !$ZSHDOT/bin/git-rank-contributors
