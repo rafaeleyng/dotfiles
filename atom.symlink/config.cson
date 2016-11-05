@@ -1,5 +1,6 @@
 "*":
   core:
+    destroyEmptyPanes: false
     disabledPackages: [
       "background-tips"
       "exception-reporting"
@@ -14,9 +15,13 @@
       "language-mustache"
       "language-objective-c"
       "language-toml"
-      "angularjs"
-      "angularjs-snippets"
-      "ruby-slim"
+      "language-ruby-on-rails"
+      "language-ruby"
+      "language-php"
+      "language-perl"
+      "language-git"
+      "go-to-line"
+      "link"
     ]
     hideGitIgnoredFiles: true
     ignoredNames: [
@@ -28,14 +33,16 @@
       "vendor"
       "node_modules"
     ]
+    telemetryConsent: "no"
     themes: [
       "atom-dark-ui"
       "atom-dark-syntax"
     ]
   editor:
     fontFamily: "Menlo"
+    fontSize: 12
     invisibles: {}
-    preferredLineLength: 250
+    preferredLineLength: 300
     showIndentGuide: true
     showInvisibles: true
     softWrap: true
@@ -44,6 +51,9 @@
   "language-babel": {}
   "linter-eslint":
     useGlobalEslint: true
+  "linter-scss-lint":
+    disableWhenNoConfigFileInPath: true
+  minimap: {}
   react: {}
   "release-notes":
     viewedVersion: "0.89.0"
@@ -62,6 +72,9 @@
 ".angular.html.text":
   editor:
     preferredLineLength: 150
+".ansible.source":
+  editor:
+    preferredLineLength: 250
 ".attribute-values.js.jsx.source":
   editor:
     preferredLineLength: 150
