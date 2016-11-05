@@ -1,6 +1,31 @@
 "*":
   core:
     audioBeep: false
+    disabledPackages: [
+      "about"
+      "autocomplete-css"
+      "autocomplete-html"
+      "autosave"
+      "bookmarks"
+      "encoding-selector"
+      "exception-reporting"
+      "go-to-line"
+      "language-clojure"
+      "language-csharp"
+      "language-go"
+      "language-less"
+      "language-make"
+      "language-mustache"
+      "language-objective-c"
+      "language-perl"
+      "language-php"
+      "language-property-list"
+      "language-toml"
+      "link"
+      "metrics"
+      "notifications"
+      "timecop"
+    ]
     openEmptyEditorOnStart: false
     telemetryConsent: "no"
     themes: [
