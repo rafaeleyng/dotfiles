@@ -5,6 +5,8 @@
 # This installs some of the common dependencies needed (or at least desired)
 # using Homebrew.
 
+echo "  Checking homebrew installation"
+
 # Check for Homebrew
 if test ! $(which brew)
 then
@@ -18,7 +20,7 @@ then
   then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
   fi
-  
+
 fi
 
 # Install homebrew packages
