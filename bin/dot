@@ -6,7 +6,7 @@
 # to make sure you're on the latest and greatest.
 
 # Set OS X defaults
-$ZSHDOT/osx/set-defaults.sh
+$ZSHDOT/macos/set-defaults.sh
 
 # Upgrade homebrew
 brew update

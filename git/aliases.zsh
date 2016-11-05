@@ -5,3 +5,7 @@ if (( $+commands[hub] ))
 then
   alias git=$hub_path
 fi
+
+alias gs='gst'
+
+# for all the rest, I just use oh-my-zsh git plugin aliases
