@@ -1,0 +1,18 @@
+"*":
+  core:
+    audioBeep: false
+    openEmptyEditorOnStart: false
+    telemetryConsent: "no"
+    themes: [
+      "atom-dark-ui"
+      "atom-dark-syntax"
+    ]
+    warnOnLargeFileLimit: 3
+  editor:
+    preferredLineLength: 200
+    showIndentGuide: true
+    showInvisibles: true
+  "exception-reporting":
+    userId: "067faffa-37e3-559e-f87c-fb3a0dae0193"
+  welcome:
+    showOnStartup: false
