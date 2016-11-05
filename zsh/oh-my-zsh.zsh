@@ -4,6 +4,6 @@ export ZSH=/Users/rafael/.oh-my-zsh
 ZSH_THEME="agnoster"
 DEFAULT_USER="rafael"
 
-plugins=(brew git node npm docker)
+plugins=(brew git npm docker)
 
 source $ZSH/oh-my-zsh.sh
