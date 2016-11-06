@@ -1,4 +1,4 @@
 # node version manager
 
-source ~/.nvm/nvm.sh
-nvm use 5.3 > /dev/null
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # --no-use for perfomance reasons:

@@ -24,6 +24,6 @@ then
 fi
 
 # Install homebrew packages
-brew install grc coreutils spark ack
+brew install grc coreutils spark ack thefuck
 
 exit 0
