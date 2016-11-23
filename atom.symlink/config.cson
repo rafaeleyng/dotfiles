@@ -7,7 +7,6 @@
       "autocomplete-html"
       "autosave"
       "bookmarks"
-      "encoding-selector"
       "exception-reporting"
       "go-to-line"
       "language-clojure"
@@ -25,6 +24,7 @@
       "metrics"
       "notifications"
       "timecop"
+      "language-babel"
     ]
     openEmptyEditorOnStart: false
     telemetryConsent: "no"
@@ -32,11 +32,14 @@
       "atom-dark-ui"
       "atom-dark-syntax"
     ]
-    warnOnLargeFileLimit: 3
+    warnOnLargeFileLimit: 2
   editor:
+    fontSize: 16
     preferredLineLength: 200
     showIndentGuide: true
     showInvisibles: true
+    softWrap: true
+    softWrapAtPreferredLineLength: true
   "exception-reporting":
     userId: "067faffa-37e3-559e-f87c-fb3a0dae0193"
   welcome:

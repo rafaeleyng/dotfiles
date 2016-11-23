@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/rafael/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 ZSH_THEME="agnoster"
 DEFAULT_USER="rafael"
