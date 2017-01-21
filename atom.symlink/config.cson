@@ -42,5 +42,6 @@
     softWrapAtPreferredLineLength: true
   "exception-reporting":
     userId: "067faffa-37e3-559e-f87c-fb3a0dae0193"
+  "tree-view": {}
   welcome:
     showOnStartup: false

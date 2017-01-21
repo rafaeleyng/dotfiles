@@ -30,7 +30,6 @@ script/bootstrap
 ## customizations
 
 - [nvm](https://github.com/creationix/nvm) and node stable will be installed and used by default
-- [thefuck](https://github.com/nvbn/thefuck)
 - [z](https://github.com/rupa/z)
 - `h <tab>`, similar to `c <tab>`, a function to go to folders inside my `~` folder (copied from @ryanb [dotfiles](https://github.com/ryanb/dotfiles/blob/master/oh-my-zsh/custom/plugins/rbates/rbates.plugin.zsh))
 - `dev <tab>`, same as `c <tab>`, but with the `dev` folder
