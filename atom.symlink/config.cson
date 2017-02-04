@@ -34,7 +34,6 @@
     ]
     warnOnLargeFileLimit: 2
   editor:
-    fontSize: 16
     preferredLineLength: 200
     showIndentGuide: true
     showInvisibles: true
