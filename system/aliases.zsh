@@ -3,9 +3,8 @@
 #   `brew install coreutils`
 if $(gls &>/dev/null)
 then
-  # this gives error
-  # alias ls="gls -F --color"
-  # alias l="gls -lAh --color"
-  # alias ll="gls -l --color"
-  # alias la='gls -A --color'
+  alias ls="grc ls -F"
+  alias l="grc ls -lAh"
+  alias ll="grc ls -l"
+  alias la='grc ls -A'
 fi
