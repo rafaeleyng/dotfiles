@@ -1,4 +1,7 @@
 "*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "98a5618d-d214-4b5c-baea-898428d02d1d"
   core:
     audioBeep: false
     disabledPackages: [
@@ -22,11 +25,11 @@
       "language-toml"
       "link"
       "metrics"
-      "notifications"
+      "background-tips"
+      "language-c"
+      "welcome"
       "timecop"
-      "language-babel"
     ]
-    openEmptyEditorOnStart: false
     telemetryConsent: "no"
     themes: [
       "atom-dark-ui"
@@ -34,6 +37,7 @@
     ]
     warnOnLargeFileLimit: 2
   editor:
+    fontSize: 17
     preferredLineLength: 200
     showIndentGuide: true
     showInvisibles: true
@@ -41,6 +45,8 @@
     softWrapAtPreferredLineLength: true
   "exception-reporting":
     userId: "067faffa-37e3-559e-f87c-fb3a0dae0193"
-  "tree-view": {}
+  "tree-view":
+    hideIgnoredNames: false
+    hideVcsIgnoredFiles: false
   welcome:
     showOnStartup: false
