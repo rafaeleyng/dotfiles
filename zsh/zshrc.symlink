@@ -1,4 +1,4 @@
-# shortcut to this dotfiles path is $ZSHDOT
+# shortcut to this dotfiles path is $ZSHDOT - one of the two places where I have to export this
 export ZSHDOT=$HOME/.dotfiles
 
 # Stash your environment variables in ~/.localrc. This means they'll stay out

@@ -5,6 +5,9 @@
 # `dot` handles installation, updates, things like that. Run it periodically
 # to make sure you're on the latest and greatest.
 
+# shortcut to this dotfiles path is $ZSHDOT - one of the two places where I have to export this
+export ZSHDOT=$HOME/.dotfiles
+
 # Set OS X defaults
 $ZSHDOT/macos/set-defaults.sh
 
