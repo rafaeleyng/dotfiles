@@ -24,6 +24,6 @@ then
 fi
 
 # Install homebrew packages
-brew install grc coreutils spark ack zsh-syntax-highlighting tree
+brew install grc coreutils spark ack zsh-syntax-highlighting tree hub
 
 exit 0

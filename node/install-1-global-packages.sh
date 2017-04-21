@@ -1,1 +1,2 @@
-npm install -g diff-so-fancy
+# TODO
+# npm install -g diff-so-fancy
