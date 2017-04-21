@@ -5,7 +5,8 @@
 cd "$(dirname "$0")/.."
 DOTFILES_ROOT=$(pwd -P)
 
-set -e
+# (rafaeleyng) commented this from @holman's because nvm fails with "set -e"
+# set -e
 
 echo ''
 

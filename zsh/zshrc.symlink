@@ -42,3 +42,7 @@ do
 done
 
 unset config_files
+
+# TODO rafael - try to put this in the right place
+export NVM_DIR="/Users/rafael/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

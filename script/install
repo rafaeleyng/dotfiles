@@ -2,7 +2,8 @@
 #
 # Run all dotfiles installers.
 
-set -e
+# (rafaeleyng) commented this from @holman's because nvm fails with "set -e"
+# set -e
 
 cd "$(dirname $0)"/..
 
@@ -12,4 +13,3 @@ brew bundle
 
 # find the installers and run them iteratively
 find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
-find . -name install-*.sh | while read installer ; do sh -c "${installer}" ; done
