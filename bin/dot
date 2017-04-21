@@ -8,8 +8,13 @@
 # Set OS X defaults
 $ZSHDOT/macos/set-defaults.sh
 
+# Install homebrew
+$ZSHDOT/homebrew/install.sh 2>&1
+
 # Upgrade homebrew
+echo "› brew update"
 brew update
 
-# Install homebrew packages
+# Install software
+echo "› $ZSHDOT/script/install"
 $ZSHDOT/script/install
