@@ -13,6 +13,7 @@ brew 'libgit2'
 brew 'openssl'
 brew 'readline'
 brew 'wget'
+brew 'yarn'
 brew 'zsh-syntax-highlighting'
 
 # TODO rafael
