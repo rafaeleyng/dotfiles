@@ -14,8 +14,6 @@ brew 'openssl'
 brew 'readline'
 brew 'wget'
 brew 'zsh-syntax-highlighting'
-# brew 'node'
-# brew 'yarn'
 
 # TODO rafael
 # cask 'atom'

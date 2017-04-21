@@ -1,4 +1,4 @@
-node_install () {
+node_install_nvm_and_node () {
   local NVM_DIR=~/.nvm
   local NVM_FILE=$NVM_DIR/nvm.sh
   local NVM_VERSION=0.33.1
@@ -19,7 +19,9 @@ node_install () {
   nvm alias default $NODE_VERSION
 }
 
-# TODO
-# npm install -g diff-so-fancy
+node_install_global_dependencies () {
+  npm i -g diff-so-fancy
+}
 
-node_install
+node_install_nvm_and_node
+node_install_global_dependencies
