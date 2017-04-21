@@ -6,17 +6,19 @@ node_install_nvm_and_node () {
 
   echo "  Checking nvm installation"
 
-  if [ ! -s ~/.nvm/nvm.sh ]
+  if [ ! -s $NVM_FILE ]
   then
     echo "  Installing nvm $NVM_VERSION"
     rm -fr $NVM_DIR
     curl -o- https://raw.githubusercontent.com/creationix/nvm/v${NVM_VERSION}/install.sh | bash
-    source $NVM_FILE
   fi
+
+  source $NVM_FILE
 
   echo "  Installing node $NODE_VERSION"
   nvm install $NODE_VERSION
   nvm alias default $NODE_VERSION
+  nvm use default
 }
 
 node_install_global_dependencies () {
