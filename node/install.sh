@@ -7,7 +7,7 @@ fi
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 
 echo "  Installing node $NODE_VERSION"
-NODE_VERSION=6.10.1
+NODE_VERSION=6.10.3
 nvm install $NODE_VERSION
 nvm alias default $NODE_VERSION
 nvm use default
