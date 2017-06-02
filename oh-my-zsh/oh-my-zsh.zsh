@@ -2,7 +2,7 @@
 export ZSH=~/.oh-my-zsh
 
 ZSH_THEME="agnoster"
-DEFAULT_USER="rafael"
+DEFAULT_USER=$(whoami)
 
 plugins=(brew git yarn docker z)
 
