@@ -29,6 +29,7 @@
       "language-c"
       "welcome"
       "timecop"
+      "linter-python"
     ]
     telemetryConsent: "no"
     themes: [
@@ -45,6 +46,14 @@
     softWrapAtPreferredLineLength: true
   "exception-reporting":
     userId: "067faffa-37e3-559e-f87c-fb3a0dae0193"
+  "linter-flake8":
+    flakeErrors: true
+  "linter-python":
+    executablePath: "/Users/rafael.eyng/.pyenv/versions/3.5.3/bin/pylama"
+    force: true
+    withPep8: true
+  "linter-ui-default":
+    panelHeight: 188
   "tree-view":
     hideIgnoredNames: false
     hideVcsIgnoredFiles: false
