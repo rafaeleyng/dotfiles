@@ -1,5 +1,0 @@
-#!/bin/sh
-#
-# Sets OS X defaults by running $ZSHDOT/macos/set-defaults.sh.
-
-exec $ZSHDOT/macos/set-defaults.sh

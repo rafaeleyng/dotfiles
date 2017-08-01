@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 #
 # bootstrap installs things.
 
@@ -145,7 +145,7 @@ install_dotfiles
 if [ "$(uname -s)" == "Darwin" ]
 then
   info "installing dependencies"
-  if source bin/dot
+  if source script/install
   then
     success "dependencies installed"
   else

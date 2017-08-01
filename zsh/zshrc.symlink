@@ -1,4 +1,3 @@
-# shortcut to this dotfiles path is $ZSHDOT - one of the two places where I have to export this
 export ZSHDOT=$HOME/.dotfiles
 
 # Stash your environment variables in ~/.localrc. This means they'll stay out
@@ -9,18 +8,10 @@ then
   source ~/.localrc
 fi
 
-# all of our zsh files
 typeset -U config_files
-config_files=($ZSHDOT/**/*.zsh)
+config_files=($ZSHDOT/*/index.zsh)
 
-# load the path files
-for file in ${(M)config_files:#*/path.zsh}
-do
-  source $file
-done
-
-# load everything but the path, completion and aliases files
-for file in ${${${config_files:#*/path.zsh}:#*/completion.zsh}:#*/aliases.zsh}
+for file in $config_files
 do
   source $file
 done
@@ -29,20 +20,7 @@ done
 autoload -U compinit
 compinit
 
-# load every completion after autocomplete loads
-for file in ${(M)config_files:#*/completion.zsh}
-do
-  source $file
-done
-
-# load aliases
-for file in ${(M)config_files:#*/aliases.zsh}
-do
-  source $file
-done
-
 unset config_files
 
 # TODO rafael: try to move from here
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+source "/usr/local/opt/nvm/nvm.sh"

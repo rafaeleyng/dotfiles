@@ -1,3 +1,6 @@
+######################################
+# aliases
+######################################
 # Use `hub` as our git wrapper:
 #   http://defunkt.github.com/hub/
 hub_path=$(which hub)
@@ -7,5 +10,4 @@ then
 fi
 
 alias gs='gst'
-
 # for all the rest, I just use oh-my-zsh git plugin aliases

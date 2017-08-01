@@ -1,0 +1,2 @@
+# find the updaters and run them iteratively
+find ${BASH_SOURCE%/*}/.. -name update.sh | while read updater ; do sh -c "${updater}" ; done
