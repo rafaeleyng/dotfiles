@@ -33,12 +33,11 @@
     ]
     telemetryConsent: "no"
     themes: [
-      "atom-dark-ui"
+      "one-dark-ui"
       "atom-dark-syntax"
     ]
     warnOnLargeFileLimit: 2
   editor:
-    fontSize: 17
     preferredLineLength: 200
     showIndentGuide: true
     showInvisibles: true
@@ -53,7 +52,7 @@
     force: true
     withPep8: true
   "linter-ui-default":
-    panelHeight: 188
+    panelHeight: 95
   "tree-view":
     hideIgnoredNames: false
     hideVcsIgnoredFiles: false
