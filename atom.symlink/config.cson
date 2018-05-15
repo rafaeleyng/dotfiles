@@ -73,7 +73,7 @@
       warnOnNotInstalled: false
   "tree-view":
     hideIgnoredNames: false
-    hideVcsIgnoredFiles: true
+    hideVcsIgnoredFiles: false
   welcome:
     showOnStartup: false
 ".reason.source":
