@@ -10,6 +10,7 @@ export EDITOR='atom'
 
 # your code folder that we can `c [tab]` to
 export PROJECTS=~/code
+export DEV=~/dev
 
 ######################################
 # keys

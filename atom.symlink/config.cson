@@ -4,6 +4,18 @@
       _analyticsUserId: "98a5618d-d214-4b5c-baea-898428d02d1d"
   core:
     audioBeep: false
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".hgrc"
+        ".flowconfig"
+      ]
+      "source.json": [
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
     disabledPackages: [
       "about"
       "autocomplete-css"
@@ -14,9 +26,7 @@
       "go-to-line"
       "language-clojure"
       "language-csharp"
-      "language-go"
       "language-less"
-      "language-make"
       "language-mustache"
       "language-objective-c"
       "language-perl"
@@ -26,10 +36,12 @@
       "link"
       "metrics"
       "background-tips"
-      "language-c"
       "welcome"
       "timecop"
       "linter-python"
+      "language-coffee-script"
+      "language-ruby-on-rails"
+      "language-sql"
     ]
     telemetryConsent: "no"
     themes: [
@@ -38,24 +50,32 @@
     ]
     warnOnLargeFileLimit: 2
   editor:
-    fontSize: 17
+    fontSize: 15
     preferredLineLength: 200
     showIndentGuide: true
     showInvisibles: true
-    softWrap: true
     softWrapAtPreferredLineLength: true
   "exception-reporting":
     userId: "067faffa-37e3-559e-f87c-fb3a0dae0193"
+  "fuzzy-finder":
+    ignoredNames: [
+      "node_modules"
+    ]
   "linter-flake8":
     flakeErrors: true
   "linter-python":
     executablePath: "/Users/rafael.eyng/.pyenv/versions/3.5.3/bin/pylama"
     force: true
     withPep8: true
-  "linter-ui-default":
-    panelHeight: 188
+  "linter-ui-default": {}
+  nuclide:
+    "nuclide-flow":
+      warnOnNotInstalled: false
   "tree-view":
     hideIgnoredNames: false
-    hideVcsIgnoredFiles: false
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
+".reason.source":
+  editor:
+    preferredLineLength: 110

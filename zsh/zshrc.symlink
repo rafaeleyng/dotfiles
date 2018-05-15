@@ -8,6 +8,8 @@ then
   source ~/.localrc
 fi
 
+source $ZSHDOT/system/index.zsh
+
 typeset -U config_files
 config_files=($ZSHDOT/*/index.zsh)
 
@@ -32,3 +34,7 @@ export PYTHONUNBUFFERED=1
 export PATH="$PATH:$HOME/.rvm/bin"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/rafael/.sdkman"
+[[ -s "/Users/rafael/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/rafael/.sdkman/bin/sdkman-init.sh"
