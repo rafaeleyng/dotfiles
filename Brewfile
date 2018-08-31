@@ -2,13 +2,16 @@ cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
 
-brew 'ack'
+brew 'ack' # grep
 brew 'ansible'
+brew 'bat' # cat
 brew 'coreutils'
+brew 'fd' # find
+brew 'fzf' # fuzzy finder
 brew 'gpg2'
 brew 'hub'
 brew 'imagemagick'
-brew 'jq'
+brew 'jq' # json query
 brew 'libgit2'
 brew 'nvm'
 brew 'openssl'
