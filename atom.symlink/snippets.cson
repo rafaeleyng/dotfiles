@@ -24,3 +24,6 @@
   'Console log':
     'prefix': 'log'
     'body': 'console.log($1)'
+  'Console error':
+    'prefix': 'error'
+    'body': 'console.error($1)'

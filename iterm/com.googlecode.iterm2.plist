@@ -488,7 +488,7 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>498 97 610 420 0 0 1280 777 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>330 289 620 392 0 0 1280 777 </string>
+	<string>288 1132 620 392 -362 800 1920 1057 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 93 606 469 0 0 1280 777 </string>
 	<key>NSWindow Frame SharedPreferences</key>
@@ -498,13 +498,13 @@
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 1280 777 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 23 1280 754 0 0 1280 777 </string>
-	<key>NSWindow Frame iTerm Window 3</key>
 	<string>0 0 1280 777 0 0 1280 777 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>628 249 652 528 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
 	<string>0 0 1280 777 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
-	<string>0 23 1280 754 0 0 1280 777 </string>
+	<string>0 249 652 528 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 6</key>
 	<string>0 0 1280 777 0 0 1280 777 </string>
 	<key>New Bookmarks</key>
@@ -1142,6 +1142,16 @@
 			<string>/Users/rafael.eyng</string>
 		</dict>
 	</array>
+	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
+	<true/>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
+	<true/>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
+	<integer>0</integer>
+	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt</key>
+	<true/>
+	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt_selection</key>
+	<integer>0</integer>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
@@ -1280,11 +1290,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-02-15T10:40:00Z</date>
+	<date>2018-06-21T17:52:13Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.43011568509615394</real>
 	<key>UseBorder</key>
@@ -1298,6 +1308,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.5</string>
+	<string>3.1.6</string>
 </dict>
 </plist>

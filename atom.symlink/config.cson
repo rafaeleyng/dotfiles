@@ -25,7 +25,6 @@
       "exception-reporting"
       "go-to-line"
       "language-clojure"
-      "language-csharp"
       "language-less"
       "language-mustache"
       "language-objective-c"
@@ -42,6 +41,7 @@
       "language-coffee-script"
       "language-ruby-on-rails"
       "language-sql"
+      "linter-shellcheck"
     ]
     telemetryConsent: "no"
     themes: [
@@ -50,7 +50,7 @@
     ]
     warnOnLargeFileLimit: 2
   editor:
-    fontSize: 15
+    fontSize: 13
     preferredLineLength: 200
     showIndentGuide: true
     showInvisibles: true
@@ -67,13 +67,13 @@
     executablePath: "/Users/rafael.eyng/.pyenv/versions/3.5.3/bin/pylama"
     force: true
     withPep8: true
-  "linter-ui-default": {}
+  "linter-ui-default":
+    panelHeight: 284
   nuclide:
     "nuclide-flow":
       warnOnNotInstalled: false
   "tree-view":
     hideIgnoredNames: false
-    hideVcsIgnoredFiles: false
   welcome:
     showOnStartup: false
 ".reason.source":
