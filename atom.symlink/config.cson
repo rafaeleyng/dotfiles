@@ -10,11 +10,17 @@
         ".hgrc"
         ".flowconfig"
       ]
+      "source.js.jsx": [
+        "js"
+      ]
       "source.json": [
         "BUCK.autodeps"
       ]
       "source.python": [
         "BUCK"
+      ]
+      "source.shell": [
+        ".env"
       ]
     disabledPackages: [
       "about"
@@ -37,11 +43,13 @@
       "background-tips"
       "welcome"
       "timecop"
-      "linter-python"
       "language-coffee-script"
       "language-ruby-on-rails"
       "language-sql"
       "linter-shellcheck"
+      "github"
+      "open-on-github"
+      "linter-flake8"
     ]
     telemetryConsent: "no"
     themes: [
@@ -50,7 +58,6 @@
     ]
     warnOnLargeFileLimit: 2
   editor:
-    fontSize: 13
     preferredLineLength: 200
     showIndentGuide: true
     showInvisibles: true
@@ -61,14 +68,15 @@
     ignoredNames: [
       "node_modules"
     ]
+  "language-babel":
+    disableWhenNoBabelrcFileInPath: false
   "linter-flake8":
     flakeErrors: true
   "linter-python":
     executablePath: "/Users/rafael.eyng/.pyenv/versions/3.5.3/bin/pylama"
     force: true
     withPep8: true
-  "linter-ui-default":
-    panelHeight: 284
+  "linter-ui-default": {}
   nuclide:
     "nuclide-flow":
       warnOnNotInstalled: false

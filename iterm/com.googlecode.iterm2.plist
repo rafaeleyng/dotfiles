@@ -488,11 +488,11 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>498 97 610 420 0 0 1280 777 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>288 1132 620 392 -362 800 1920 1057 </string>
+	<string>330 288 620 392 0 0 1280 777 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 93 606 469 0 0 1280 777 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>242 172 937 512 0 0 1280 777 </string>
+	<string>242 172 796 486 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1280 777 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -500,12 +500,14 @@
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>0 0 1280 777 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>628 249 652 528 0 0 1280 777 </string>
+	<string>0 249 652 528 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
 	<string>0 0 1280 777 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
-	<string>0 249 652 528 0 0 1280 777 </string>
+	<string>0 0 1280 777 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 6</key>
+	<string>0 0 1280 777 0 0 1280 777 </string>
+	<key>NSWindow Frame iTerm Window 7</key>
 	<string>0 0 1280 777 0 0 1280 777 </string>
 	<key>New Bookmarks</key>
 	<array>
@@ -1087,7 +1089,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>10000</integer>
+			<integer>0</integer>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -1281,8 +1283,10 @@
 	<string>/Users/rafael.eyng/.dotfiles/iterm</string>
 	<key>Print In Black And White</key>
 	<true/>
+	<key>SUAutomaticallyUpdate</key>
+	<false/>
 	<key>SUEnableAutomaticChecks</key>
-	<true/>
+	<false/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
@@ -1290,7 +1294,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-06-21T17:52:13Z</date>
+	<date>2018-10-08T04:10:42Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -1308,6 +1312,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.6</string>
+	<string>3.2.3</string>
 </dict>
 </plist>
