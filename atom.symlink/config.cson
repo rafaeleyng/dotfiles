@@ -76,7 +76,8 @@
     executablePath: "/Users/rafael.eyng/.pyenv/versions/3.5.3/bin/pylama"
     force: true
     withPep8: true
-  "linter-ui-default": {}
+  "linter-ui-default":
+    panelHeight: 126
   nuclide:
     "nuclide-flow":
       warnOnNotInstalled: false

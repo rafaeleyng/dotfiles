@@ -8,14 +8,17 @@ then
   source ~/.localrc
 fi
 
-source $ZSHDOT/system/index.zsh
+SYSTEM_INDEX=$ZSHDOT/system/index.zsh
+source $SYSTEM_INDEX
 
 typeset -U config_files
 config_files=($ZSHDOT/*/index.zsh)
 
 for file in $config_files
 do
-  source $file
+  if [ $file != $SYSTEM_INDEX ]; then
+    source $file
+  fi
 done
 
 # initialize autocomplete here, otherwise functions won't be loaded
@@ -27,6 +30,15 @@ unset config_files
 ######### nvm
 # TODO rafael: try to move from here
 source "/usr/local/opt/nvm/nvm.sh"
+
+######### virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh
+
+######### virtualenv
+alias vpython='[ -d "../vpython-$(basename $(pwd))" ] || virtualenv ../vpython-$(basename $(pwd)); source ../vpython-$(basename $(pwd))/bin/activate'
+alias vpython3='[ -d "../vpython-$(basename $(pwd))" ] || virtualenv -p python3.7 ../vpython-$(basename $(pwd)); source ../vpython-$(basename $(pwd))/bin/activate'
 
 ######### pyenv
 eval "$(pyenv init -)"
@@ -56,6 +68,23 @@ export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(e {})+abort'"
 
 PATH="~/bin:$PATH"
 
+######### slack
 alias slack1="curl -X PUT http://raspberrypi.local:9000/api/v1/inputs/1"
 alias slack2="curl -X PUT http://raspberrypi.local:9000/api/v1/inputs/2"
 alias slack3="curl -X PUT http://raspberrypi.local:9000/api/v1/inputs/3"
+
+######### thumbor
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+### https://github.com/deweller/switchaudio-osx
+S_OUT_1="s -t output -s 'Built-in Output'"
+S_OUT_2="s -t output -s 'HDMI'"
+S_SYS_1="s -t system -s 'Built-in Output'"
+S_SYS_2="s -t system -s 'HDMI'"
+S_IN_1="s -t input -s 'ARCANO AM-BLACK-1 '" # yes, with a trailing space ¯\_(ツ)_/¯
+S_IN_2="s -t input -s 'Built-in Microphone'"
+alias s='SwitchAudioSource'
+alias sn='s -n'
+alias s1="($S_OUT_1) && ($S_SYS_1) && ($S_IN_1 || $S_IN_2)"
+alias s2="($S_OUT_2) && ($S_SYS_2) && ($S_IN_1 || $S_IN_2)"
