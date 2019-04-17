@@ -58,6 +58,7 @@
     ]
     warnOnLargeFileLimit: 2
   editor:
+    fontSize: 15
     preferredLineLength: 200
     showIndentGuide: true
     showInvisibles: true
@@ -76,8 +77,7 @@
     executablePath: "/Users/rafael.eyng/.pyenv/versions/3.5.3/bin/pylama"
     force: true
     withPep8: true
-  "linter-ui-default":
-    panelHeight: 126
+  "linter-ui-default": {}
   nuclide:
     "nuclide-flow":
       warnOnNotInstalled: false

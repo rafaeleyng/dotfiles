@@ -37,7 +37,7 @@ export PROJECT_HOME=$HOME/Devel
 source /usr/local/bin/virtualenvwrapper.sh
 
 ######### virtualenv
-alias vpython='[ -d "../vpython-$(basename $(pwd))" ] || virtualenv ../vpython-$(basename $(pwd)); source ../vpython-$(basename $(pwd))/bin/activate'
+alias vpython='[ -d "../vpython-$(basename $(pwd))" ] || virtualenv -p python2.7 ../vpython-$(basename $(pwd)); source ../vpython-$(basename $(pwd))/bin/activate'
 alias vpython3='[ -d "../vpython-$(basename $(pwd))" ] || virtualenv -p python3.7 ../vpython-$(basename $(pwd)); source ../vpython-$(basename $(pwd))/bin/activate'
 
 ######### pyenv
