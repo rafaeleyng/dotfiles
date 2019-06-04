@@ -32,9 +32,9 @@ unset config_files
 source "/usr/local/opt/nvm/nvm.sh"
 
 ######### virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
+# export WORKON_HOME=$HOME/.virtualenvs
+# export PROJECT_HOME=$HOME/Devel
+# source /usr/local/bin/virtualenvwrapper.sh
 
 ######### virtualenv
 alias vpython='[ -d "../vpython-$(basename $(pwd))" ] || virtualenv -p python2.7 ../vpython-$(basename $(pwd)); source ../vpython-$(basename $(pwd))/bin/activate'
