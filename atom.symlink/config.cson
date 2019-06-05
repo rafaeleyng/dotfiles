@@ -50,6 +50,12 @@
       "github"
       "open-on-github"
       "linter-flake8"
+      "archive-view"
+      "autoflow"
+      "language-csharp"
+      "language-java"
+      "language-ruby"
+      "language-rust-bundled"
     ]
     telemetryConsent: "no"
     themes: [
@@ -58,7 +64,6 @@
     ]
     warnOnLargeFileLimit: 2
   editor:
-    fontSize: 15
     preferredLineLength: 200
     showIndentGuide: true
     showInvisibles: true

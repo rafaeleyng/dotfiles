@@ -1,0 +1,10 @@
+autocomplete-paths
+busy-signal
+editorconfig
+intentions
+language-babel
+language-docker
+linter
+linter-eslint
+linter-ui-default
+sort-lines
