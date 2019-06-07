@@ -47,7 +47,6 @@
       "language-ruby-on-rails"
       "language-sql"
       "linter-shellcheck"
-      "github"
       "open-on-github"
       "linter-flake8"
       "archive-view"
