@@ -50,9 +50,9 @@ export PYTHONUNBUFFERED=1
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 ######### sdkman
-# #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-# export SDKMAN_DIR="/Users/rafael/.sdkman"
-# [[ -s "/Users/rafael/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/rafael/.sdkman/bin/sdkman-init.sh"
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 ######### fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -66,12 +66,19 @@ export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(e {})+abort'"
 # # The next line enables shell command completion for gcloud.
 # if [ -f '/Users/rafael.eyng/sftw/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/rafael.eyng/sftw/google-cloud-sdk/completion.zsh.inc'; fi
 
+# For compilers to find zlib you may need to set:
+export LDFLAGS="${LDFLAGS} -L/usr/local/opt/zlib/lib"
+export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/zlib/include"
+
+# For pkg-config to find zlib you may need to set:
+export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
+
 PATH="~/bin:$PATH"
 
 ######### slack
-alias slack1="curl -X PUT http://raspberrypi.local:9000/api/v1/inputs/1"
-alias slack2="curl -X PUT http://raspberrypi.local:9000/api/v1/inputs/2"
-alias slack3="curl -X PUT http://raspberrypi.local:9000/api/v1/inputs/3"
+alias slack1="curl -X PUT http://pi1.local:9000/api/v1/inputs/1"
+alias slack2="curl -X PUT http://pi1.local:9000/api/v1/inputs/2"
+alias slack3="curl -X PUT http://pi1.local:9000/api/v1/inputs/3"
 
 ######### thumbor
 export LC_ALL=en_US.UTF-8
