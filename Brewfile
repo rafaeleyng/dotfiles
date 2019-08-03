@@ -28,6 +28,7 @@ brew 'zsh-syntax-highlighting'
 
 cask 'atom'
 cask 'docker'
+cask 'flux'
 cask 'google-chrome'
 cask 'iterm2'
 cask 'macmediakeyforwarder'
