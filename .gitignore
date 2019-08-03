@@ -11,3 +11,4 @@ git/gitconfig.local.symlink
 
 # local files, temp stuff
 local/
+local.zsh
