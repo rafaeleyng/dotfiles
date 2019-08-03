@@ -1,3 +1,3 @@
 #!/bin/sh
 
-apm install --packages-file atom_packages.txt
+apm install --packages-file atom/atom_packages.txt
