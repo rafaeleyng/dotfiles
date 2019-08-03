@@ -1,10 +1,15 @@
 autocomplete-paths
 busy-signal
 editorconfig
+emmet
 intentions
 language-babel
 language-docker
+language-nginx
+language-terraform
 linter
 linter-eslint
 linter-ui-default
+pretty-json
 sort-lines
+split-diff
