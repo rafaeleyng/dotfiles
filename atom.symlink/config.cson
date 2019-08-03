@@ -21,6 +21,7 @@
       ]
       "source.shell": [
         ".env"
+        "symlink"
       ]
     disabledPackages: [
       "about"
