@@ -110,3 +110,5 @@ alias s2="($S_OUT_2) && ($S_SYS_2) && ($S_IN_1 || $S_IN_2)"
 TIME_END=$(($(gdate +%s%N) / 1000000))
 # enable to print the load time
 # echo $((TIME_END-TIME_START))
+
+. /usr/local/opt/asdf/asdf.sh
