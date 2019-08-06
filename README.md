@@ -9,14 +9,14 @@ I renamed in this project every occurrence of the variable `ZSH` to `ZSHDOT`, as
 ```sh
 git clone https://github.com/rafaeleyng/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-script/bootstrap
+scripts/bootstrap
 ```
 
 ## components (same as in @holman's)
 
 - `bin/`: Anything in `bin/` will get added to your `$PATH` and be made available everywhere.
 - `<topic>/index.zsh`: Get loaded into your environment.
-- `<topic>/\*.symlink`: Any files ending in `*.symlink` get symlinked without extension into your `$HOME`. This is so you can keep all of those versioned in your dotfiles but still keep those autoloaded files in your home directory. These get symlinked in when you run `script/bootstrap`.
+- `<topic>/\*.symlink`: Any files ending in `*.symlink` get symlinked without extension into your `$HOME`. This is so you can keep all of those versioned in your dotfiles but still keep those autoloaded files in your home directory. These get symlinked in when you run `scripts/bootstrap`.
 
 ## customizations
 

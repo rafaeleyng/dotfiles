@@ -6,4 +6,4 @@
 # to make sure you're on the latest and greatest.
 
 export ZSHDOT=$HOME/.dotfiles
-$ZSHDOT/script/update
+$ZSHDOT/scripts/update

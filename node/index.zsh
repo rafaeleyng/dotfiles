@@ -1,1 +1,1 @@
-export NVM_DIR="$HOME/.nvm"
+# export NVM_DIR="$HOME/.nvm"
