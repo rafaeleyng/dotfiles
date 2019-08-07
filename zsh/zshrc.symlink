@@ -28,49 +28,6 @@ compinit
 
 unset config_files
 
-# ######### nvm
-# # TODO rafael: try to move from here
-# # source "/usr/local/opt/nvm/nvm.sh"
-# # Add every binary that requires nvm, npm or node to run to an array of node globals
-# NODE_GLOBALS=(`find ~/.nvm/versions/node -maxdepth 3 -type l -wholename '*/bin/*' | xargs -n1 basename | sort | uniq`)
-# NODE_GLOBALS+=("node")
-# NODE_GLOBALS+=("nvm")
-# NODE_GLOBALS+=("npx")
-#
-# # Lazy-loading nvm + npm on node globals call
-# load_nvm () {
-#   export NVM_DIR=~/.nvm
-#   [ -s "$(brew --prefix nvm)/nvm.sh" ] && . "$(brew --prefix nvm)/nvm.sh"
-# }
-#
-# # Making node global trigger the lazy loading
-# for cmd in "${NODE_GLOBALS[@]}"; do
-#   eval "${cmd}(){ unset -f ${NODE_GLOBALS}; load_nvm; ${cmd} \$@ }"
-# done
-
-######### virtualenvwrapper
-# export WORKON_HOME=$HOME/.virtualenvs
-# export PROJECT_HOME=$HOME/Devel
-# source /usr/local/bin/virtualenvwrapper.sh
-
-# ######### virtualenv
-# alias vpython='[ -d "../vpython-$(basename $(pwd))" ] || virtualenv -p python2.7 ../vpython-$(basename $(pwd)); source ../vpython-$(basename $(pwd))/bin/activate'
-# alias vpython3='[ -d "../vpython-$(basename $(pwd))" ] || virtualenv -p python3.7 ../vpython-$(basename $(pwd)); source ../vpython-$(basename $(pwd))/bin/activate'
-#
-# ######### pyenv
-# eval "$(pyenv init -)"
-# export PYTHONUNBUFFERED=1
-
-######### rvm
-# # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-# export PATH="$PATH:$HOME/.rvm/bin"
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-######### sdkman
-# #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-# export SDKMAN_DIR="$HOME/.sdkman"
-# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
 ######### fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias preview="fzf --preview 'bat --color \"always\" {}'"
