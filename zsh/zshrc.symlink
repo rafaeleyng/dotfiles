@@ -96,12 +96,12 @@ PATH="~/bin:$PATH"
 # export LANG=en_US.UTF-8
 
 ### https://github.com/deweller/switchaudio-osx
-S_OUT_1="s -t output -s 'Built-in Output'"
-S_OUT_2="s -t output -s 'HDMI'"
-S_SYS_1="s -t system -s 'Built-in Output'"
-S_SYS_2="s -t system -s 'HDMI'"
+S_OUT_1="s -t output -s 'External Headphones'"
+S_OUT_2="s -t output -s 'DisplayPort'"
+S_SYS_1="s -t system -s 'External Headphones'"
+S_SYS_2="s -t system -s 'DisplayPort'"
 S_IN_1="s -t input -s 'ARCANO AM-BLACK-1 '" # yes, with a trailing space ¯\_(ツ)_/¯
-S_IN_2="s -t input -s 'Built-in Microphone'"
+S_IN_2="s -t input -s 'External Microphone'"
 alias s='SwitchAudioSource'
 alias sn='s -n'
 alias s1="($S_OUT_1) && ($S_SYS_1) && ($S_IN_1 || $S_IN_2)"
