@@ -111,4 +111,7 @@ TIME_END=$(($(gdate +%s%N) / 1000000))
 # enable to print the load time
 # echo $((TIME_END-TIME_START))
 
+alias a='asdf'
 . /usr/local/opt/asdf/asdf.sh
+# TODO make completions work
+# . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash

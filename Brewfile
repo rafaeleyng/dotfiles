@@ -9,6 +9,7 @@ brew 'bat' # cat
 brew 'coreutils'
 brew 'fd' # find
 brew 'fzf' # fuzzy finder
+brew 'gpg'
 brew 'gpg2'
 brew 'imagemagick'
 brew 'jq' # json query
