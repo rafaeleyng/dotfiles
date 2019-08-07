@@ -1,4 +1,11 @@
 TIME_START=$(($(gdate +%s%N) / 1000000))
+
+local function compute_load_time () {
+  local TIME_START=$1
+  local TIME_END=$(($(gdate +%s%N) / 1000000))
+  echo $((TIME_END-TIME_START))
+}
+
 export ZSHDOT=$HOME/.dotfiles
 
 # Stash your environment variables in ~/.localrc. This means they'll stay out
@@ -64,11 +71,10 @@ alias sn='s -n'
 alias s1="($S_OUT_1) && ($S_SYS_1) && ($S_IN_1 || $S_IN_2)"
 alias s2="($S_OUT_2) && ($S_SYS_2) && ($S_IN_1 || $S_IN_2)"
 
-TIME_END=$(($(gdate +%s%N) / 1000000))
-# enable to print the load time
-# echo $((TIME_END-TIME_START))
-
 alias a='asdf'
 . /usr/local/opt/asdf/asdf.sh
 # TODO make completions work
 # . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+
+# enable to print the load time
+#compute_load_time $TIME_START
