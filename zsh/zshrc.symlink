@@ -60,16 +60,22 @@ PATH="~/bin:$PATH"
 # export LANG=en_US.UTF-8
 
 ### https://github.com/deweller/switchaudio-osx
-S_OUT_1="s -t output -s 'External Headphones'"
-S_OUT_2="s -t output -s 'DisplayPort'"
 S_SYS_1="s -t system -s 'External Headphones'"
-S_SYS_2="s -t system -s 'DisplayPort'"
+S_OUT_1="s -t output -s 'External Headphones'"
 S_IN_1="s -t input -s 'ARCANO AM-BLACK-1 '" # yes, with a trailing space ¯\_(ツ)_/¯
+
+S_SYS_2="s -t system -s 'DisplayPort'"
+S_OUT_2="s -t output -s 'DisplayPort'"
 S_IN_2="s -t input -s 'External Microphone'"
+
+S_SYS_3="s -t system -s 'Microsoft LifeChat LX-3000'"
+S_OUT_3="s -t output -s 'Microsoft LifeChat LX-3000'"
+
 alias s='SwitchAudioSource'
 alias sn='s -n'
 alias s1="($S_OUT_1) && ($S_SYS_1) && ($S_IN_1 || $S_IN_2)"
 alias s2="($S_OUT_2) && ($S_SYS_2) && ($S_IN_1 || $S_IN_2)"
+alias s3="($S_OUT_3) && ($S_SYS_3) && ($S_IN_1 || $S_IN_2)"
 
 alias a='asdf'
 . /usr/local/opt/asdf/asdf.sh
