@@ -1,14 +1,4 @@
-atom.symlink/.apm
-atom.symlink/.atom-socket-secret-*
-atom.symlink/.node-gyp
-atom.symlink/.storage
-atom.symlink/blob-store
-atom.symlink/compile-cache
-atom.symlink/packages
-atom.symlink/storage
-atom.symlink/themes
-
-git/gitconfig.local.symlink
+Brewfile.lock.json
 
 # local files, temp stuff
 local/

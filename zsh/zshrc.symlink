@@ -22,6 +22,8 @@ source $SYSTEM_INDEX
 typeset -U config_files
 config_files=($ZSHDOT/*/index.zsh)
 
+echo $config_files
+
 for file in $config_files
 do
   if [ $file != $SYSTEM_INDEX ]; then

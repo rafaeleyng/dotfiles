@@ -4,6 +4,7 @@ tap 'homebrew/bundle'
 
 brew 'ack' # grep
 brew 'ansible'
+brew 'asdf'
 brew 'awscli'
 brew 'bat' # cat
 brew 'coreutils'
