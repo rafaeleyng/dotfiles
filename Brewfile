@@ -11,9 +11,11 @@ brew 'fd' # find
 brew 'fzf' # fuzzy finder
 brew 'gpg'
 brew 'gpg2'
+brew 'hub' # https://hub.github.com/
 brew 'imagemagick'
 brew 'jq' # json query
 brew 'libgit2'
+brew 'ngrep'
 brew 'openssl'
 brew 'readline'
 brew 'switchaudio-osx'

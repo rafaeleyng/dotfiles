@@ -82,5 +82,10 @@ alias a='asdf'
 # TODO make completions work
 # . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
 
-# enable to print the load time
-#compute_load_time $TIME_START
+# TODO - sep - https://gist.github.com/steve-jansen/61a189b6ab961a517f68
+
+# TODO - globalprotect - https://www.joshcurry.co.uk/posts/how-to-quit-globalprotect-mac
+# launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*
+# launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*
+
+# compute_load_time $TIME_START # enable to print the load time

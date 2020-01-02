@@ -1,12 +1,9 @@
 #!/bin/sh
 #
-# bootstrap installs things.
+# hooks the dotfiles project to your home and shell config
 
 cd "$(dirname "$0")/.."
 DOTFILES_ROOT=$(pwd -P)
-
-# (rafaeleyng) commented this from @holman's because nvm fails with "set -e"
-# set -e
 
 echo ''
 

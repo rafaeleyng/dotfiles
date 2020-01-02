@@ -61,16 +61,14 @@
       "dev-live-reload"
       "encoding-selector"
       "github"
-      "language-c"
       "language-go"
-      "language-sass"
-      "language-typescript"
       "language-xml"
       "package-generator"
       "styleguide"
       "symbols-view"
       "update-package-dependencies"
       "wrap-guide"
+      "language-terraform"
     ]
     telemetryConsent: "no"
     themes: [
@@ -79,6 +77,7 @@
     ]
     warnOnLargeFileLimit: 2
   editor:
+    fontSize: 15
     preferredLineLength: 200
     showIndentGuide: true
     showInvisibles: true
@@ -97,7 +96,8 @@
     executablePath: "/Users/rafael.eyng/.pyenv/versions/3.5.3/bin/pylama"
     force: true
     withPep8: true
-  "linter-ui-default": {}
+  "linter-ui-default":
+    showPanel: true
   nuclide:
     "nuclide-flow":
       warnOnNotInstalled: false
