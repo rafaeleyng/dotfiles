@@ -36,7 +36,7 @@ Here are some of the most useful software included in this dotfiles:
   - [`z`](https://github.com/rupa/z)
 - commands:
   - `e`: opens my favorite text editor
-  - `todo <text>`: creates a file on desktop to remind a TODO
+  - `todo <text>`: creates a file on desktop to remind a to-do
   - `update`: runs all `*/update.sh` files
 - functions:
   - `c <tab>`, a function to go to my code folders (copied from @ryanb [dotfiles](https://github.com/ryanb/dotfiles/blob/master/oh-my-zsh/custom/plugins/rbates/rbates.plugin.zsh))
