@@ -1,5 +1,6 @@
 [include]
   path = ~/.gitconfig.local
+  path = ~/.gitconfig.extension
 [credential]
   helper = osxkeychain
 [hub]
@@ -36,5 +37,3 @@
   smudge = git-lfs smudge %f
   required = true
   clean = git-lfs clean %f
-[url "gitlab@gitlab.globoi.com:"]
-	insteadOf = https://gitlab.globoi.com/

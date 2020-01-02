@@ -44,3 +44,22 @@ Here are some of the most useful software included in this dotfiles:
 - aliases:
   - `chrome [<filename>]`: to open Google Chrome
   - `pubkey`: copy `~/.ssh/id_rsa.pub` to clipboard
+
+## extensions
+
+The idea of supporting extensions is to have a generic dotfiles project and isolate specifics.
+
+For example, I can have the whole dotfiles that is common for all my use cases, but I might have some configuration files that only apply to my work or to my personal life. I can clone the same dotfiles in 2 computers, and add the specific extensions for each use case.
+
+Currently, the way to do this is have a separate repository with your extensions, and clone it into an `extensions` folder, like:
+
+```sh
+git clone https://github.com/<username>/<dotfiles-extension-repo>.git extensions
+```
+
+Note: this folder is already git-ignored and won't be committed.
+
+The currently supported extension files you can have inside your extensions project are:
+
+- `git/gitconfig.extension.symlink`: extends `specific/git/gitconfig.symlink`
+- `shell/custom.sh`: extends `generic/shell/custom.sh`
