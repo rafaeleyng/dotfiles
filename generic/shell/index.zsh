@@ -4,9 +4,9 @@
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
-fpath=($ZSHDOT/functions $fpath)
+fpath=($DOTFILES/generic/functions $fpath)
 
-autoload -U $ZSHDOT/functions/*(:t)
+autoload -U $DOTFILES/generic/functions/*(:t)
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000

@@ -3,3 +3,4 @@ Brewfile.lock.json
 # local files, temp stuff
 local/
 local.zsh
+.localrc

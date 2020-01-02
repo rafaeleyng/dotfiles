@@ -1,0 +1,41 @@
+# debug
+TIME_START=$(($(gdate +%s%N) / 1000000))
+local function compute_load_time () {
+  local TIME_START=$1
+  local TIME_END=$(($(gdate +%s%N) / 1000000))
+  echo $((TIME_END-TIME_START))
+}
+
+export DOTFILES=$HOME/.dotfiles
+
+# stash your environment variables in ~/.localrc (won't be commited)
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
+fi
+
+# first source the system config, which sets critical variables...
+SYSTEM_INDEX=$DOTFILES/generic/system/index.zsh
+source $SYSTEM_INDEX
+
+# ...then sources all other config files
+typeset -U CONFIG_FILES
+CONFIG_FILES=($DOTFILES/generic/*/index.zsh $DOTFILES/specific/*/index.zsh)
+for FILE in $CONFIG_FILES
+do
+  if [ $FILE != $SYSTEM_INDEX ]; then
+    source $FILE
+  fi
+done
+
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit
+compinit
+
+unset CONFIG_FILES
+
+# loads customizations
+source $DOTFILES/generic/shell/custom.sh
+# TODO load customization from extensions
+
+# compute_load_time $TIME_START # enable to print the load time

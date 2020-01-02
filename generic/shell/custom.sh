@@ -1,48 +1,20 @@
-TIME_START=$(($(gdate +%s%N) / 1000000))
+########################################
+# aliases
+########################################
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'" # copy public key to clipboard
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 
-local function compute_load_time () {
-  local TIME_START=$1
-  local TIME_END=$(($(gdate +%s%N) / 1000000))
-  echo $((TIME_END-TIME_START))
-}
-
-export ZSHDOT=$HOME/.dotfiles
-
-# Stash your environment variables in ~/.localrc. This means they'll stay out
-# of your main dotfiles repository (which may be public, like this one), but
-# you'll have access to them in your scripts.
-if [[ -a ~/.localrc ]]
-then
-  source ~/.localrc
-fi
-
-SYSTEM_INDEX=$ZSHDOT/system/index.zsh
-source $SYSTEM_INDEX
-
-typeset -U config_files
-config_files=($ZSHDOT/*/index.zsh)
-
-echo $config_files
-
-for file in $config_files
-do
-  if [ $file != $SYSTEM_INDEX ]; then
-    source $file
-  fi
-done
-
-# initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit
-compinit
-
-unset config_files
-
-######### fzf
+########################################
+# fzf
+########################################
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 # add support for ctrl+o to open selected file in VS Code
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(e {})+abort'"
 
+########################################
+# zlib
+########################################
 # For compilers to find zlib you may need to set:
 export LDFLAGS="${LDFLAGS} -L/usr/local/opt/zlib/lib"
 export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/zlib/include"
@@ -50,18 +22,22 @@ export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/zlib/include"
 # For pkg-config to find zlib you may need to set:
 export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
 
-PATH="~/bin:$PATH"
-
-######### slack
+########################################
+# slack
+########################################
 # alias slack1="curl -X PUT http://pi1.local:9000/api/v1/inputs/1"
 # alias slack2="curl -X PUT http://pi1.local:9000/api/v1/inputs/2"
 # alias slack3="curl -X PUT http://pi1.local:9000/api/v1/inputs/3"
 
-######### thumbor
+########################################
+# thumbor
+########################################
 # export LC_ALL=en_US.UTF-8
 # export LANG=en_US.UTF-8
 
-### https://github.com/deweller/switchaudio-osx
+########################################
+# switchaudio-osx - https://github.com/deweller/switchaudio-osx
+########################################
 S_SYS_1="s -t system -s 'External Headphones'"
 S_OUT_1="s -t output -s 'External Headphones'"
 S_IN_1="s -t input -s 'ARCANO AM-BLACK-1 '" # yes, with a trailing space ¯\_(ツ)_/¯
@@ -79,6 +55,9 @@ alias s1="($S_OUT_1) && ($S_SYS_1) && ($S_IN_1 || $S_IN_2)"
 alias s2="($S_OUT_2) && ($S_SYS_2) && ($S_IN_1 || $S_IN_2)"
 alias s3="($S_OUT_3) && ($S_SYS_3) && ($S_IN_1 || $S_IN_2)"
 
+########################################
+# asdf - https://asdf-vm.com/
+########################################
 alias a='asdf'
 . /usr/local/opt/asdf/asdf.sh
 # TODO make completions work
@@ -89,5 +68,3 @@ alias a='asdf'
 # TODO - globalprotect - https://www.joshcurry.co.uk/posts/how-to-quit-globalprotect-mac
 # launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*
 # launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*
-
-# compute_load_time $TIME_START # enable to print the load time
