@@ -25,14 +25,14 @@ local function source_local () {
 }
 
 local function source_system () {
-  _source $SYSTEM_CONFIG
+  _source "$SYSTEM_CONFIG"
 }
 
 function source_other () {
   typeset -U CONFIG_FILES
 
   CONFIG_FILES=($DOTFILES/generic/*/index.zsh $DOTFILES/specific/*/index.zsh)
-  if ls $DOTFILES/extensions/*/index.zsh &> /dev/null; then
+  if find ./extensions -name 'index.zsh' -not -path '.git' &> /dev/null; then
     # include any extensions if present
     CONFIG_FILES=($CONFIG_FILES $DOTFILES/extensions/*/index.zsh)
   fi
