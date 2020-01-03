@@ -1,15 +1,15 @@
 ########################################
 # aliases
 ########################################
-alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'" # copy public key to clipboard
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'" # copy public key to clipboard
 
 ########################################
-# fzf
+# fzf - https://github.com/junegunn/fzf
 ########################################
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias preview="fzf --preview 'bat --color \"always\" {}'"
-# add support for ctrl+o to open selected file in VS Code
+# add support for ctrl+o to open selected file in the default text editor
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(e {})+abort'"
 
 ########################################

@@ -1,46 +1,58 @@
+export DOTFILES=$HOME/.dotfiles
+SYSTEM_CONFIG=$DOTFILES/generic/system/index.zsh
 TIME_START=$(($(gdate +%s%N) / 1000000))
+
 local function compute_load_time () {
-  local TIME_START=$1
-  local TIME_END=$(($(gdate +%s%N) / 1000000))
-  if [[ $DEBUG = "1" ]]; then
-    echo "$((TIME_END-TIME_START)) mili-seconds"
+  local START=$1
+  local END=$(($(gdate +%s%N) / 1000000))
+  if [[ $DOTFILES_DEBUG = "1" ]]; then
+    echo "$((END-START)) mili-seconds"
   fi
 }
 
-export DOTFILES=$HOME/.dotfiles
+# https://unix.stackexchange.com/a/151896/148053 - I don't understand, but it is what it is
+local function _source () {
+  local -r FILE="$1"
+  shift
+  source "$FILE" "$@"
+}
 
-# stash your environment variables in ~/.localrc (won't be commited)
-if [[ -a ~/.localrc ]]
-then
-  source ~/.localrc
-fi
-
-# first source the system config, which sets critical variables...
-SYSTEM_INDEX=$DOTFILES/generic/system/index.zsh
-source $SYSTEM_INDEX
-
-# ...then sources all other config files
-typeset -U CONFIG_FILES
-CONFIG_FILES=($DOTFILES/generic/*/index.zsh $DOTFILES/specific/*/index.zsh)
-for FILE in $CONFIG_FILES
-do
-  if [ $FILE != $SYSTEM_INDEX ]; then
-    source $FILE
+local function source_local () {
+  if [[ -a $DOTFILES/.local ]]
+  then
+    _source $DOTFILES/.local
   fi
-done
+}
+
+local function source_system () {
+  _source $SYSTEM_CONFIG
+}
+
+function source_other () {
+  typeset -U CONFIG_FILES
+
+  CONFIG_FILES=($DOTFILES/generic/*/index.zsh $DOTFILES/specific/*/index.zsh)
+  if ls $DOTFILES/extensions/*/index.zsh &> /dev/null; then
+    # include any extensions if present
+    CONFIG_FILES=($CONFIG_FILES $DOTFILES/extensions/*/index.zsh)
+  fi
+
+  for FILE in $CONFIG_FILES
+  do
+    if [ $FILE != $SYSTEM_CONFIG ]; then
+      _source $FILE
+    fi
+  done
+
+  unset CONFIG_FILES
+}
+
+source_local # load local-only variables (not commited)
+source_system # first source the system config, which sets critical variables...
+source_other # ...then sources all other config files
 
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
 compinit
-
-unset CONFIG_FILES
-
-# loads customizations
-source $DOTFILES/generic/shell/custom.sh
-# loads extension customizations
-if [[ -a $DOTFILES/extensions/shell/custom.sh ]]
-then
-  source $DOTFILES/extensions/shell/custom.sh
-fi
 
 compute_load_time $TIME_START

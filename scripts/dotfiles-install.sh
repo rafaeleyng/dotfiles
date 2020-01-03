@@ -2,8 +2,7 @@
 #
 # hooks the dotfiles project to your home and shell config
 
-cd "$(dirname "$0")/.."
-DOTFILES_ROOT=$(pwd -P)
+export DOTFILES=$HOME/.dotfiles
 
 echo ''
 
@@ -30,12 +29,6 @@ setup_gitconfig () {
   then
     info 'setup gitconfig'
 
-    git_credential='cache'
-    if [ "$(uname -s)" == "Darwin" ]
-    then
-      git_credential='osxkeychain'
-    fi
-
     user ' - What is your github author name?'
     read -e git_authorname
     user ' - What is your github author email?'
@@ -44,7 +37,6 @@ setup_gitconfig () {
     sed \
       -e "s/AUTHORNAME/$git_authorname/g" \
       -e "s/AUTHOREMAIL/$git_authoremail/g" \
-      -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" \
       specific/git/gitconfig.local.symlink.example > specific/git/gitconfig.local.symlink
 
     success 'gitconfig'
@@ -132,7 +124,7 @@ install_dotfiles () {
 
   local overwrite_all=false backup_all=false skip_all=false
 
-  for src in $(find -H "$DOTFILES_ROOT" -maxdepth 3 -name '*.symlink' -not -path '*.git*')
+  for src in $(find -H "$DOTFILES" -maxdepth 3 -name '*.symlink' -not -path '*.git*')
   do
     dst="$HOME/.$(basename "${src%.*}")"
     link_file "$src" "$dst"

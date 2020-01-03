@@ -1,8 +1,6 @@
 # dotfiles
 
-This is a clone from @holman [dotfiles](https://github.com/holman/dotfiles) + **oh-my-zsh** config + my customizations.
-
-I renamed in this project every occurrence of the variable `ZSH` to `DOTFILES`, as pointed [here](https://github.com/holman/dotfiles/issues/70), to avoid conflicts between dotfiles and oh-my-zsh.
+This project is heavily inspired by @holman [dotfiles](https://github.com/holman/dotfiles). I've added [`oh-my-zsh`](https://ohmyz.sh/), changed the whole structure, and simplified a lot the version management for programming languages by using [`asdf`](https://asdf-vm.com/).
 
 ## install
 
@@ -14,25 +12,46 @@ scripts/dotfiles-install.sh
 
 ## folders
 
+The most notable folders are:
+
+- `scripts`: scripts that you can run manually, to either install this dotfiles project or install/update the dependencies it specifies
 - `generic`: each subfolder contains configuration for some generic component (like a default text editor or a default shell)
   - `bin/`: files are added to `$PATH` and made available everywhere, and are executed in a child process.
-  - `editor`: configurations for my text editor, that is Atom
+  - `editor`: configurations for my text editor ([atom](https://atom.io/))
   - `functions/`: files are added to `$fpath` and made available everywhere, and are executed in the current process.
-  - `shell`: configurations for my text editor, that is zsh
-- `specific`: each subfolder contains configuration for some specific component (like the Go programming language)
-- `scripts`: scripts that you can run manually, to either install this dotfiles project or install/update the dependencies it specifies
+  - `shell`: configurations for my shell ([zsh](http://zsh.sourceforge.net/))
+- `specific`: each subfolder contains configuration for some specific technology (like Git or the Go programming language):
+  - `oh-my-zsh`: my configuration for [oh-my-zsh](https://ohmyz.sh/)
 
 ## special files
 
-- `*/index.zsh`: get loaded into your environment.
-- `*/*.symlink`: any files ending in `*.symlink` get symlinked without the `*.symlink` extension into your `$HOME`. So you can keep these files versioned in your dotfiles but still keep those autoloaded files in your home directory. They are symlinked when you run `scripts/dotfiles-install.sh`.
+- `*/index.zsh`: files called `index.zsh` get loaded into your environment when a shell is loaded
+- `*/*.symlink`: files ending in `*.symlink` get symlinked (without the `*.symlink` extension) into your `$HOME` when you run `scripts/dotfiles-install.sh`
 
-## useful stuff
+## extensions
+
+I can have a generic dotfiles project and isolate specifics, like:
+- I want my work computer to have some specific files
+- I want my personal computer to have other specific files
+
+Create a separate repository with your extensions files, and clone it into an `extensions` folder (already git-ignored), like:
+
+```sh
+git clone https://github.com/<username>/<dotfiles-extension-repo>.git extensions
+scripts/dotfiles-install.sh # to process `*.symlink` files
+```
+
+The currently supported extension files you can have inside your extensions project are:
+
+- `git/gitconfig.extension.symlink`: extends `specific/git/gitconfig.symlink` and gets symlinked into your `$HOME`
+- `*/index.zsh`: files called `index.zsh` get loaded into your environment when a shell is loaded (note: they should be inside some directory, like `shell/index.zsh`)
+
+## highlights
 
 Here are some of the most useful software included in this dotfiles:
 
 - utilities:
-  - [`asdf`](https://asdf-vm.com/): version manager for several technologies. Replaces `nvm`, `pyenv`, `rbenv` and others
+  - [`asdf`](https://asdf-vm.com/): version manager for several technologies. Replaces tools like `nvm`, `pyenv`, `rbenv` and others
   - [`z`](https://github.com/rupa/z)
 - commands:
   - `e`: opens my favorite text editor
@@ -45,21 +64,8 @@ Here are some of the most useful software included in this dotfiles:
   - `chrome [<filename>]`: to open Google Chrome
   - `pubkey`: copy `~/.ssh/id_rsa.pub` to clipboard
 
-## extensions
+## references
 
-The idea of supporting extensions is to have a generic dotfiles project and isolate specifics.
-
-For example, I can have the whole dotfiles that is common for all my use cases, but I might have some configuration files that only apply to my work or to my personal life. I can clone the same dotfiles in 2 computers, and add the specific extensions for each use case.
-
-Currently, the way to do this is have a separate repository with your extensions, and clone it into an `extensions` folder, like:
-
-```sh
-git clone https://github.com/<username>/<dotfiles-extension-repo>.git extensions
-```
-
-Note: this folder is already git-ignored and won't be committed.
-
-The currently supported extension files you can have inside your extensions project are:
-
-- `git/gitconfig.extension.symlink`: extends `specific/git/gitconfig.symlink`
-- `shell/custom.sh`: extends `generic/shell/custom.sh`
+- https://github.com/holman/dotfiles
+- https://github.com/holman/dotfiles/issues/70: I renamed in this project every occurrence of the variable `ZSH` to `DOTFILES`, to avoid conflicts between dotfiles and oh-my-zsh.
+- https://unix.stackexchange.com/questions/151889/why-does-bashs-source-command-behave-differently-when-called-from-a-function: I've used this question to source my files, but if you can understand what is happening (look at all my questions in the comments of the answers) please explain me.
