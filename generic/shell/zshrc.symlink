@@ -32,7 +32,7 @@ function source_other () {
   typeset -U CONFIG_FILES
 
   CONFIG_FILES=($DOTFILES/generic/*/index.zsh $DOTFILES/specific/*/index.zsh)
-  if find ./extensions -name 'index.zsh' -not -path '.git' &> /dev/null; then
+  if find $DOTFILES/extensions -name 'index.zsh' -not -path '.git' &> /dev/null; then
     # include any extensions if present
     CONFIG_FILES=($CONFIG_FILES $DOTFILES/extensions/*/index.zsh)
   fi
