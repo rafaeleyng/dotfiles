@@ -23,6 +23,7 @@ brew 'switchaudio-osx'
 brew 'terraform'
 brew 'watchman'
 brew 'wget'
+brew 'zsh'
 brew 'zsh-syntax-highlighting'
 
 cask 'atom'
