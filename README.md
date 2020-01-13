@@ -15,7 +15,7 @@ scripts/dotfiles-install.sh
 The most notable folders are:
 
 - `scripts`: scripts that you can run manually, to either install this dotfiles project or install/update the dependencies it specifies
-- `generic`: each subfolder contains configuration for some generic component (like a default text editor or a default shell)
+- `basic`: each subfolder contains configuration for some basic component (like a default text editor or a default shell)
   - `bin/`: files are added to `$PATH` and made available everywhere, and are executed in a child process.
   - `editor`: configurations for my text editor ([atom](https://atom.io/))
   - `functions/`: files are added to `$fpath` and made available everywhere, and are executed in the current process.
@@ -30,7 +30,7 @@ The most notable folders are:
 
 ## extensions
 
-I can have a generic dotfiles project and isolate specifics, like:
+I can have a basic dotfiles project and isolate specifics, like:
 - I want my work computer to have some specific files
 - I want my personal computer to have other specific files
 

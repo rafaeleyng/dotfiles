@@ -4,9 +4,9 @@
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
-fpath=($DOTFILES/generic/functions $fpath)
+fpath=($DOTFILES/basic/functions $fpath)
 
-autoload -U $DOTFILES/generic/functions/*(:t)
+autoload -U $DOTFILES/basic/functions/*(:t)
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -75,4 +75,4 @@ zstyle ':completion:*' insert-tab pending
 ######################################
 # customizations
 ######################################
-source $DOTFILES/generic/shell/custom.sh
+source $DOTFILES/basic/shell/custom.sh

@@ -1,5 +1,5 @@
 export DOTFILES=$HOME/.dotfiles
-SYSTEM_CONFIG=$DOTFILES/generic/system/index.zsh
+SYSTEM_CONFIG=$DOTFILES/basic/system/index.zsh
 TIME_START=$(($(gdate +%s%N) / 1000000))
 
 local function compute_load_time () {
@@ -31,7 +31,7 @@ local function source_system () {
 function source_other () {
   typeset -U CONFIG_FILES
 
-  CONFIG_FILES=($DOTFILES/generic/*/index.zsh $DOTFILES/specific/*/index.zsh)
+  CONFIG_FILES=($DOTFILES/basic/*/index.zsh $DOTFILES/specific/*/index.zsh)
   if find $DOTFILES/extensions -name 'index.zsh' -not -path '.git' &> /dev/null; then
     # include any extensions if present
     CONFIG_FILES=($CONFIG_FILES $DOTFILES/extensions/*/index.zsh)
