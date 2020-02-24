@@ -1,6 +1,6 @@
 [include]
-  path = ~/.gitconfig.local
-  path = ~/.gitconfig.extension
+  path = ~/.gitconfig-local
+  path = ~/.gitconfig-extensions-work
 [credential]
   helper = osxkeychain
 [hub]

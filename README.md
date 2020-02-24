@@ -37,8 +37,15 @@ I can have a basic dotfiles project and isolate specifics, like:
 Create a separate repository with your extensions files, and clone it into an `extensions` folder (already git-ignored), like:
 
 ```sh
-git clone https://github.com/<username>/<dotfiles-extension-repo>.git extensions
-scripts/dotfiles-install.sh # to process `*.symlink` files
+# create the extensions dir
+mkdir extensions && cd extensions
+
+# add as many extensions projects you want
+git clone https://github.com/<username>/<dotfiles-extension-personal>.git
+git clone https://github.com/<username>/<dotfiles-extension-work>.git
+
+# install the extensions
+scripts/dotfiles-install.sh     # install any dependencies (`install.sh` files) defined in the extensions and links `*.symlink` files from the extensions to the home directory
 ```
 
 The currently supported extension files you can have inside your extensions project are:
@@ -68,4 +75,4 @@ Here are some of the most useful software included in this dotfiles:
 
 - https://github.com/holman/dotfiles
 - https://github.com/holman/dotfiles/issues/70: I renamed in this project every occurrence of the variable `ZSH` to `DOTFILES`, to avoid conflicts between dotfiles and oh-my-zsh.
-- https://unix.stackexchange.com/questions/151889/why-does-bashs-source-command-behave-differently-when-called-from-a-function: I've used this question to source my files, but if you can understand what is happening (look at all my questions in the comments of the answers) please explain me.
+- https://unix.stackexchange.com/questions/151889/why-does-bashs-source-command-behave-differently-when-called-from-a-function: I've used this question to source my files, but if you can understand what is happening (look at all my questions in the comments of the answers) please explain to me.

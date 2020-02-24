@@ -18,8 +18,7 @@ local function _source () {
 }
 
 local function source_local () {
-  if [[ -a $DOTFILES/.local ]]
-  then
+  if [[ -a $DOTFILES/.local ]]; then
     _source $DOTFILES/.local
   fi
 }
@@ -28,28 +27,41 @@ local function source_system () {
   _source "$SYSTEM_CONFIG"
 }
 
-function source_other () {
-  typeset -U CONFIG_FILES
+function source_non_system () {
+  typeset -U FILES
 
-  CONFIG_FILES=($DOTFILES/basic/*/index.zsh $DOTFILES/specific/*/index.zsh)
-  if find $DOTFILES/extensions -name 'index.zsh' -not -path '.git' &> /dev/null; then
-    # include any extensions if present
-    CONFIG_FILES=($CONFIG_FILES $DOTFILES/extensions/*/index.zsh)
-  fi
+  FILES=($DOTFILES/basic/*/index.zsh $DOTFILES/specific/*/index.zsh)
 
-  for FILE in $CONFIG_FILES
-  do
+  for FILE in $FILES; do
     if [ $FILE != $SYSTEM_CONFIG ]; then
       _source $FILE
     fi
   done
 
-  unset CONFIG_FILES
+  unset FILES
+}
+
+function source_extensions () {
+  typeset -U FILES
+
+  if find $DOTFILES/extensions -name 'index.zsh' -not -path '*.git*' &> /dev/null; then
+    # include any extensions if present
+    FILES=($FILES $DOTFILES/extensions/*/*/index.zsh)
+  fi
+
+  for FILE in $FILES; do
+    if [ $FILE != $SYSTEM_CONFIG ]; then
+      _source $FILE
+    fi
+  done
+
+  unset FILES
 }
 
 source_local # load local-only variables (not commited)
 source_system # first source the system config, which sets critical variables...
-source_other # ...then sources all other config files
+source_non_system # ...then sources other config files
+source_extensions
 
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit

@@ -69,7 +69,10 @@
       "update-package-dependencies"
       "wrap-guide"
       "language-terraform"
+      "atom-ide-ui"
+      "ide-cpp"
     ]
+    packagesWithKeymapsDisabled: []
     telemetryConsent: "no"
     themes: [
       "atom-dark-ui"
@@ -96,11 +99,15 @@
     executablePath: "/Users/rafael.eyng/.pyenv/versions/3.5.3/bin/pylama"
     force: true
     withPep8: true
-  "linter-ui-default":
-    showPanel: true
+  "linter-ui-default": {}
   nuclide:
     "nuclide-flow":
       warnOnNotInstalled: false
+  "spell-check":
+    addKnownWords: true
+    knownWords: [
+      "kubernetes"
+    ]
   "tree-view":
     hideIgnoredNames: false
   welcome:

@@ -1,8 +1,7 @@
 #!/bin/sh
 #
 # hooks the dotfiles project to your home and shell config
-
-export DOTFILES=$HOME/.dotfiles
+export DOTFILES="$HOME/.dotfiles"
 
 echo ''
 
@@ -25,7 +24,7 @@ fail () {
 }
 
 setup_gitconfig () {
-  if ! [ -f specific/git/gitconfig.local.symlink ]
+  if ! [ -f specific/git/gitconfig-local.symlink ]
   then
     info 'setup gitconfig'
 
@@ -37,7 +36,7 @@ setup_gitconfig () {
     sed \
       -e "s/AUTHORNAME/$git_authorname/g" \
       -e "s/AUTHOREMAIL/$git_authoremail/g" \
-      specific/git/gitconfig.local.symlink.example > specific/git/gitconfig.local.symlink
+      specific/git/gitconfig-local.symlink.example > specific/git/gitconfig-local.symlink
 
     success 'gitconfig'
   fi
@@ -124,7 +123,7 @@ install_dotfiles () {
 
   local overwrite_all=false backup_all=false skip_all=false
 
-  for src in $(find -H "$DOTFILES" -maxdepth 3 -name '*.symlink' -not -path '*.git*')
+  for src in $(find -H "$DOTFILES" -maxdepth 4 -name '*.symlink' -not -path '*.git*')
   do
     dst="$HOME/.$(basename "${src%.*}")"
     link_file "$src" "$dst"
@@ -143,4 +142,4 @@ else
 fi
 
 echo ''
-echo '  All installed!'
+success '  All installed!'
