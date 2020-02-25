@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # run `update` periodically to make sure you're on the latest and greatest
 

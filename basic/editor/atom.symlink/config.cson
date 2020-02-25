@@ -47,7 +47,6 @@
       "language-coffee-script"
       "language-ruby-on-rails"
       "language-sql"
-      "linter-shellcheck"
       "open-on-github"
       "linter-flake8"
       "archive-view"

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 export ZSH=~/.oh-my-zsh
 
 if [ ! -d $ZSH ]; then

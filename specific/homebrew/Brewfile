@@ -21,6 +21,7 @@ brew 'minikube' # https://kubernetes.io/docs/tasks/tools/install-minikube/
 brew 'ngrep'
 brew 'openssl'
 brew 'readline'
+brew 'shellcheck'
 brew 'switchaudio-osx'
 brew 'telnet'
 brew 'terraform'

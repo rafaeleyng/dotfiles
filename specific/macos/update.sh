@@ -1,2 +1,5 @@
+#!/bin/bash
+
 echo "› MacOS update"
-source ${BASH_SOURCE%/*}/install.sh
+# shellcheck disable=SC1090
+source "${BASH_SOURCE%/*}"/install.sh

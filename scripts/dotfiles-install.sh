@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # hooks the dotfiles project to your home and shell config
 export DOTFILES="$HOME/.dotfiles"
@@ -6,32 +6,31 @@ export DOTFILES="$HOME/.dotfiles"
 echo ''
 
 info () {
-  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
+  printf "\r  [ \033[00;34m..\033[0m ] %s\n" "$1"
 }
 
 user () {
-  printf "\r  [ \033[0;33m??\033[0m ] $1\n"
+  printf "\r  [ \033[0;33m??\033[0m ] %s\n" "$1"
 }
 
 success () {
-  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
+  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] %s\n" "$1"
 }
 
 fail () {
-  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
+  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] %s\n" "$1"
   echo ''
   exit
 }
 
 setup_gitconfig () {
-  if ! [ -f specific/git/gitconfig-local.symlink ]
-  then
+  if ! [ -f specific/git/gitconfig-local.symlink ]; then
     info 'setup gitconfig'
 
     user ' - What is your github author name?'
-    read -e git_authorname
+    read -r -e git_authorname
     user ' - What is your github author email?'
-    read -e git_authoremail
+    read -r -e git_authoremail
 
     sed \
       -e "s/AUTHORNAME/$git_authorname/g" \
@@ -44,29 +43,22 @@ setup_gitconfig () {
 
 
 link_file () {
-  local src=$1 dst=$2
+  local SRC=$1 DST=$2
 
-  local overwrite= backup= skip=
+  local overwrite='' backup='' skip=''
   local action=
 
-  if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]
-  then
+  if [ -f "$DST" ] || [ -d "$DST" ] || [ -L "$DST" ]; then
+    if [ "$overwrite_all" == "false" ] && [ "$backup_all" == "false" ] && [ "$skip_all" == "false" ]; then
+      local currentSrc
+      currentSrc="$(readlink "$DST")"
 
-    if [ "$overwrite_all" == "false" ] && [ "$backup_all" == "false" ] && [ "$skip_all" == "false" ]
-    then
-
-      local currentSrc="$(readlink $dst)"
-
-      if [ "$currentSrc" == "$src" ]
-      then
-
+      if [ "$currentSrc" == "$SRC" ]; then
         skip=true;
-
       else
-
-        user "File already exists: $dst ($(basename "$src")), what do you want to do?\n\
+        user "File already exists: $DST ($(basename "$SRC")), what do you want to do?\n\
         [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
-        read -n 1 action
+        read -r -n 1 action
 
         case "$action" in
           o )
@@ -84,35 +76,30 @@ link_file () {
           * )
             ;;
         esac
-
       fi
-
     fi
 
     overwrite=${overwrite:-$overwrite_all}
     backup=${backup:-$backup_all}
     skip=${skip:-$skip_all}
 
-    if [ "$overwrite" == "true" ]
-    then
-      rm -rf "$dst"
-      success "removed $dst"
+    if [ "$overwrite" == "true" ]; then
+      rm -rf "$DST"
+      success "removed $DST"
     fi
 
-    if [ "$backup" == "true" ]
-    then
-      mv "$dst" "${dst}.backup"
-      success "moved $dst to ${dst}.backup"
+    if [ "$backup" == "true" ]; then
+      mv "$DST" "${DST}.backup"
+      success "moved $DST to ${DST}.backup"
     fi
 
-    if [ "$skip" == "true" ]
-    then
-      success "skipped $src"
+    if [ "$skip" == "true" ]; then
+      success "skipped $SRC"
     fi
   fi
 
-  if [ "$skip" != "true" ]  # "false" or empty
-  then
+  # "false" or empty
+  if [ "$skip" != "true" ]; then
     ln -s "$1" "$2"
     success "linked $1 to $2"
   fi
@@ -123,10 +110,10 @@ install_dotfiles () {
 
   local overwrite_all=false backup_all=false skip_all=false
 
-  for src in $(find -H "$DOTFILES" -maxdepth 4 -name '*.symlink' -not -path '*.git*')
-  do
-    dst="$HOME/.$(basename "${src%.*}")"
-    link_file "$src" "$dst"
+  # shellcheck disable=SC2044
+  for SRC in $(find -H "$DOTFILES" -maxdepth 4 -name '*.symlink' -not -path '*.git*'); do
+    DST="$HOME/.$(basename "${SRC%.*}")"
+    link_file "$SRC" "$DST"
   done
 }
 

@@ -1,9 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 #
 # run all dotfiles installers
 export DOTFILES="$HOME/.dotfiles"
 
-cd "$(dirname $0)"/..
-for FILE in $(find -H "$DOTFILES" -maxdepth 4 -name 'update.sh'  -not -path '*.git*'); do
-  sh -c "${FILE}"
-done
+cd "$(dirname "$0")"/.. || exit
+find -H "$DOTFILES" -maxdepth 4 -name 'update.sh'  -not -path '*.git*' -exec sh -c 'FILE="$1"; "$FILE"' _ {} \;

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ########################################
 # aliases
 ########################################
@@ -7,7 +9,10 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pa
 ########################################
 # fzf - https://github.com/junegunn/fzf
 ########################################
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [[ -f ~/.fzf.zsh ]]; then
+  # shellcheck disable=SC1090
+  source ~/.fzf.zsh
+fi
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 # add support for ctrl+o to open selected file in the default text editor
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(e {})+abort'"
@@ -16,6 +21,7 @@ export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(e {})+abort'"
 # asdf - https://asdf-vm.com/
 ########################################
 alias a='asdf'
-. /usr/local/opt/asdf/asdf.sh
+# shellcheck disable=SC1091
+source /usr/local/opt/asdf/asdf.sh
 # TODO make completions work
 # . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
