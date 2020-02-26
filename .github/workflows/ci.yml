@@ -1,0 +1,12 @@
+name: CI
+on: [push]
+
+jobs:
+  build:
+    name: Greeting
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: rafaeleyng/shellcheck-action@v2
+        with:
+          command: ./shellcheck.sh
