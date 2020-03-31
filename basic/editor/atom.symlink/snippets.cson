@@ -27,3 +27,6 @@
   'Console error':
     'prefix': 'error'
     'body': 'console.error($1)'
+  'arrange/act/assert':
+    'prefix': 'aaa'
+    'body': '// arrange\n$1\n\n// act\n\n\n// assert'

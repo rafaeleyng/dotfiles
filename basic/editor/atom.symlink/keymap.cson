@@ -32,3 +32,5 @@
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
 'atom-workspace':
   'ctrl-cmd-\\': 'tree-view:toggle'
+  'ctrl-alt-o': 'outline-view:toggle'
+  'alt-o': 'unset!'
