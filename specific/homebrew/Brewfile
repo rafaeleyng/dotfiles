@@ -3,9 +3,7 @@ cask_args appdir: '/Applications'
 tap 'homebrew/bundle'
 
 brew 'ack' # grep
-brew 'ansible'
 brew 'asdf' # https://github.com/asdf-vm/asdf
-brew 'awscli'
 brew 'bat' # cat
 brew 'coreutils' # https://apple.stackexchange.com/questions/69223/how-to-replace-mac-os-x-utilities-with-gnu-core-utilities
 brew 'fd' # find
@@ -42,4 +40,3 @@ cask 'postman'
 cask 'spectacle'
 cask 'spotify'
 cask 'visual-studio-code'
-cask 'zoomus'
