@@ -10,19 +10,13 @@ brew 'fd' # find
 brew 'fzf' # fuzzy finder
 brew 'gpg'
 brew 'gpg2'
-brew 'hub' # https://hub.github.com/
 brew 'imagemagick'
 brew 'jq' # json query
 brew 'kubectl' # https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-with-homebrew-on-macos
 brew 'libgit2'
-brew 'minikube' # https://kubernetes.io/docs/tasks/tools/install-minikube/
-brew 'ngrep'
 brew 'openssl'
 brew 'readline'
-brew 'shellcheck'
 brew 'switchaudio-osx'
-brew 'telnet'
-brew 'terraform'
 brew 'watchman'
 brew 'wget'
 brew 'yq' # like jq, for yaml
@@ -30,13 +24,10 @@ brew 'zsh-syntax-highlighting'
 brew 'zsh'
 
 cask 'atom'
-cask 'authy'
 cask 'docker'
 cask 'flux'
 cask 'google-chrome'
 cask 'iterm2'
 cask 'macmediakeyforwarder'
-cask 'postman'
 cask 'spectacle'
 cask 'spotify'
-cask 'visual-studio-code'
