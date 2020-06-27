@@ -31,3 +31,5 @@
   smudge = git-lfs smudge %f
   required = true
   clean = git-lfs clean %f
+[pager]
+	branch = false
