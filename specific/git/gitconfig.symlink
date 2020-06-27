@@ -32,4 +32,5 @@
   required = true
   clean = git-lfs clean %f
 [pager]
-	branch = false
+  branch = false
+  tag = false
