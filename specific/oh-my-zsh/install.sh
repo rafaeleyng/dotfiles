@@ -8,5 +8,5 @@ fi
 
 ZSH_THEME_DIR=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
 if [ ! -d $ZSH ]; then
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_THEME_DIR
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$ZSH_THEME_DIR"
 fi
