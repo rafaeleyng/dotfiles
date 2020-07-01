@@ -17,7 +17,7 @@ The most notable folders are:
 - `scripts`: scripts that you can run manually, to either install this dotfiles project or install/update the dependencies it specifies
 - `basic`: each subfolder contains configuration for some basic component (like a default text editor or a default shell)
   - `bin/`: files are added to `$PATH` and made available everywhere, and are executed in a child process.
-  - `editor`: configurations for my text editor ([atom](https://atom.io/))
+  - `editor`: configurations for my text editor
   - `functions/`: files are added to `$fpath` and made available everywhere, and are executed in the current process.
   - `shell`: configurations for my shell ([zsh](http://zsh.sourceforge.net/))
 - `specific`: each subfolder contains configuration for some specific technology (like Git or the Go programming language):
