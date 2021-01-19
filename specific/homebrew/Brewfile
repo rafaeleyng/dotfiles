@@ -23,6 +23,7 @@ brew 'yq' # like jq, for yaml
 brew 'zsh-syntax-highlighting'
 brew 'zsh'
 
+cask '1password'
 cask 'docker'
 cask 'google-chrome'
 cask 'iterm2'
@@ -30,3 +31,4 @@ cask 'macmediakeyforwarder'
 cask 'spectacle'
 cask 'spotify'
 cask 'visual-studio-code'
+cask 'whatsapp'
