@@ -13,6 +13,7 @@
 [core]
   excludesfile = ~/.gitignore
   editor = vim
+  pager = delta
 [apply]
   whitespace = nowarn
 [mergetool]
@@ -34,3 +35,13 @@
 [pager]
   branch = false
   tag = false
+
+[delta]
+  plus-style = "syntax #012800"
+  minus-style = "syntax #340001"
+  syntax-theme = Monokai Extended
+  navigate = true
+[interactive]
+  diffFilter = delta --color-only
+[init]
+	defaultBranch = main
