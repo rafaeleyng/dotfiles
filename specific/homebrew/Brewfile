@@ -4,23 +4,15 @@ tap 'homebrew/bundle'
 
 brew 'ack' # grep
 brew 'asdf' # https://github.com/asdf-vm/asdf
-brew 'bash'
 brew 'bat' # cat
 brew 'coreutils' # https://apple.stackexchange.com/questions/69223/how-to-replace-mac-os-x-utilities-with-gnu-core-utilities
 brew 'fd' # find
 brew 'fzf' # fuzzy finder
-brew 'gpg'
-brew 'gpg2'
-brew 'imagemagick'
 brew 'jq' # json query
-brew 'kubectl' # https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-with-homebrew-on-macos
-brew 'libgit2'
 brew 'openssl'
 brew 'readline'
 brew 'switchaudio-osx'
-brew 'watchman'
 brew 'wget'
-brew 'yq' # like jq, for yaml
 brew 'zsh-syntax-highlighting'
 brew 'zsh'
 
