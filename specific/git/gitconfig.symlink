@@ -12,7 +12,7 @@
   ui = true
 [core]
   excludesfile = ~/.gitignore
-  editor = vim
+	editor = code --wait
   pager = delta
 [apply]
   whitespace = nowarn
@@ -29,13 +29,13 @@
   # Setting to git 2.0 default to suppress warning message
   default = simple
 [filter "lfs"]
-  smudge = git-lfs smudge %f
+	smudge = git-lfs smudge -- %f
   required = true
-  clean = git-lfs clean %f
+	clean = git-lfs clean -- %f
+	process = git-lfs filter-process
 [pager]
   branch = false
   tag = false
-
 [delta]
   plus-style = "syntax #012800"
   minus-style = "syntax #340001"

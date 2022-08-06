@@ -5,6 +5,7 @@
 ########################################
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'" # copy public key to clipboard
+alias goland='/usr/local/bin/goland'
 
 ########################################
 # fzf - https://github.com/junegunn/fzf
@@ -26,3 +27,5 @@ source /usr/local/opt/asdf/asdf.sh
 
 # TODO make completions work
 # . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+
+# export PATH="$PATH:/usr/local/smlnj/bin"
