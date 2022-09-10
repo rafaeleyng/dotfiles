@@ -14,6 +14,7 @@
   excludesfile = ~/.gitignore
 	editor = code --wait
   pager = delta
+  quotePath = false
 [apply]
   whitespace = nowarn
 [mergetool]
