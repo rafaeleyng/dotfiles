@@ -8,4 +8,4 @@
 softwareupdate -i -a
 
 # shellcheck disable=SC1090
-source "${BASH_SOURCE%/*}"/set-defaults.sh
+source features/macos/set-defaults.sh
