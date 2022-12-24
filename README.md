@@ -15,13 +15,12 @@ scripts/dotfiles-install.sh
 The most notable folders are:
 
 - `scripts`: scripts that you can run manually, to either install this dotfiles project or install/update the dependencies it specifies
-- `basic`: each subfolder contains configuration for some basic component (like a default text editor or a default shell)
+- `features`: each subfolder contains configuration for some feature. Notable examples:
   - `bin/`: files are added to `$PATH` and made available everywhere, and are executed in a child process.
   - `editor`: configurations for my text editor
   - `functions/`: files are added to `$fpath` and made available everywhere, and are executed in the current process.
-  - `shell`: configurations for my shell ([zsh](http://zsh.sourceforge.net/))
-- `specific`: each subfolder contains configuration for some specific technology (like Git or the Go programming language):
-  - `oh-my-zsh`: my configuration for [oh-my-zsh](https://ohmyz.sh/)
+  - `oh-my-zsh/`: my configuration for [oh-my-zsh](https://ohmyz.sh/)
+  - `shell/`: configurations for my shell ([zsh](http://zsh.sourceforge.net/))
 
 ## special files
 
@@ -30,7 +29,7 @@ The most notable folders are:
 
 ## extensions
 
-I can have a basic dotfiles project and isolate specifics, like:
+I can have this base dotfiles project and isolate specifics, like:
 - I want my work computer to have some specific files
 - I want my personal computer to have other specific files
 
@@ -50,7 +49,7 @@ scripts/dotfiles-install.sh     # install any dependencies (`install.sh` files) 
 
 The currently supported extension files you can have inside your extensions project are:
 
-- `git/gitconfig.extension.symlink`: extends `specific/git/gitconfig.symlink` and gets symlinked into your `$HOME`
+- `git/gitconfig.extension.symlink`: extends `features/git/gitconfig.symlink` and gets symlinked into your `$HOME`
 - `*/index.zsh`: files called `index.zsh` get loaded into your environment when a shell is loaded (note: they should be inside some directory, like `shell/index.zsh`)
 
 ## highlights

@@ -24,7 +24,7 @@ fail () {
 }
 
 setup_gitconfig () {
-  if ! [ -f specific/git/gitconfig-local.symlink ]; then
+  if ! [ -f features/git/gitconfig-local.symlink ]; then
     info 'setup gitconfig'
 
     user ' - What is your github author name?'
@@ -35,7 +35,7 @@ setup_gitconfig () {
     sed \
       -e "s/AUTHORNAME/$git_authorname/g" \
       -e "s/AUTHOREMAIL/$git_authoremail/g" \
-      specific/git/gitconfig-local.symlink.example > specific/git/gitconfig-local.symlink
+      features/git/gitconfig-local.symlink.example > features/git/gitconfig-local.symlink
 
     success 'gitconfig'
   fi
@@ -120,13 +120,13 @@ install_dotfiles () {
 setup_gitconfig
 install_dotfiles
 
-info "installing dependencies"
-if source scripts/dependencies-install.sh
-then
-  success "dependencies installed"
-else
-  fail "error installing dependencies"
-fi
+# info "installing dependencies"
+# if source scripts/dependencies-install.sh
+# then
+#   success "dependencies installed"
+# else
+#   fail "error installing dependencies"
+# fi
 
 echo ''
 success '  All installed!'

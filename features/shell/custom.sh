@@ -23,7 +23,8 @@ export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(e {})+abort'"
 ########################################
 alias a='asdf'
 # shellcheck disable=SC1091
-source /usr/local/opt/asdf/asdf.sh
+# TODO
+# source /usr/local/opt/asdf/asdf.sh
 
 # TODO make completions work
 # . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash

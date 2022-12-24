@@ -1,5 +1,5 @@
 export DOTFILES=$HOME/.dotfiles
-SYSTEM_CONFIG=$DOTFILES/basic/system/index.zsh
+SYSTEM_CONFIG=$DOTFILES/features/system/index.zsh
 TIME_START=$(($(gdate +%s%N) / 1000000))
 
 local function compute_load_time () {
@@ -30,7 +30,7 @@ local function source_system () {
 function source_non_system () {
   typeset -U FILES
 
-  FILES=($DOTFILES/basic/*/index.zsh $DOTFILES/specific/*/index.zsh)
+  FILES=($DOTFILES/features/*/index.zsh)
 
   for FILE in $FILES; do
     if [ $FILE != $SYSTEM_CONFIG ]; then

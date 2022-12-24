@@ -13,6 +13,6 @@ fi
 
 # Run Homebrew through the Brewfile
 echo "› brew bundle"
-brew bundle --file="specific/homebrew/Brewfile"
+brew bundle --file="features/homebrew/Brewfile"
 
 exit 0

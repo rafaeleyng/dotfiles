@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-shellcheck -e SC1071 ./scripts/*.sh ./specific/**/*.sh ./basic/*/*.sh
+shellcheck -e SC1071 ./features/*/*.sh ./scripts/*.sh
