@@ -30,3 +30,4 @@ alias a='asdf'
 # . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
 
 # export PATH="$PATH:/usr/local/smlnj/bin"
+echo TODO

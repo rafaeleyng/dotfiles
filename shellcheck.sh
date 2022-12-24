@@ -1,3 +1,3 @@
-#!/bin/sh
+#!/bin/bash
 
-shellcheck -e SC1071 ./features/*/*.sh ./scripts/*.sh
+shellcheck -x -e SC1071 ./features/*/*.sh ./scripts/*.sh
