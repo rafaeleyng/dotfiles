@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/bin/zsh
 
 echo TODO vscode setup

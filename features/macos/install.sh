@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # The Brewfile handles Homebrew-based app and library installs, but there may
 # still be updates and installables in the Mac App Store. There's a nifty

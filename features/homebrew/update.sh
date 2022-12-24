@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 echo "› brew update"
 brew update

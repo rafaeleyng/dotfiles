@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # https://github.com/holman/dotfiles/blob/master/macos/set-defaults.sh
 # https://github.com/mathiasbynens/dotfiles/blob/master/.macos

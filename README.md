@@ -70,11 +70,11 @@ Here are some of the most useful software included in this dotfiles:
   - `chrome [<filename>]`: to open Google Chrome
   - `pubkey`: copy `~/.ssh/id_rsa.pub` to clipboard
 
-## shellcheck
+## [shellcheck](https://www.shellcheck.net/)
 
-To run `shellcheck` against the project files, either:
-- install `shellcheck` on your system and run `./shellcheck.sh`
-- or have `docker-compose` and run `docker-compose up`
+```sh
+docker-compose up
+```
 
 ## references
 

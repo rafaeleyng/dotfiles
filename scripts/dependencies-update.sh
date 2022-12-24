@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 #
 # run all dotfiles installers
 export DOTFILES="$HOME/.dotfiles"
