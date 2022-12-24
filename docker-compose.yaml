@@ -1,0 +1,5 @@
+services:
+  dotfiles:
+    build: .
+    volumes:
+      - .:/app
