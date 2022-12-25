@@ -1,9 +1,6 @@
-#!/bin/zsh
-#
-# hooks the dotfiles project to your home and shell config
-export DOTFILES="$HOME/.dotfiles"
+#!/bin/bash
 
-echo ''
+export DOTFILES="$HOME/.dotfiles"
 
 info () {
   printf "\r  [ \033[00;34m..\033[0m ] %s\n" "$1"
@@ -23,25 +20,6 @@ fail () {
   exit
 }
 
-setup_gitconfig () {
-  if ! [ -f features/git/gitconfig-local.symlink ]; then
-    info 'setup gitconfig'
-
-    user ' - What is your github author name?'
-    read -r -e git_authorname
-    user ' - What is your github author email?'
-    read -r -e git_authoremail
-
-    sed \
-      -e "s/AUTHORNAME/$git_authorname/g" \
-      -e "s/AUTHOREMAIL/$git_authoremail/g" \
-      features/git/gitconfig-local.symlink.example > features/git/gitconfig-local.symlink
-
-    success 'gitconfig'
-  fi
-}
-
-
 link_file () {
   local SRC=$1 DST=$2
 
@@ -49,11 +27,11 @@ link_file () {
   local action=
 
   if [ -f "$DST" ] || [ -d "$DST" ] || [ -L "$DST" ]; then
-    if [ "$overwrite_all" == "false" ] && [ "$backup_all" == "false" ] && [ "$skip_all" == "false" ]; then
+    if [ "$overwrite_all" = "false" ] && [ "$backup_all" = "false" ] && [ "$skip_all" = "false" ]; then
       local currentSrc
       currentSrc="$(readlink "$DST")"
 
-      if [ "$currentSrc" == "$SRC" ]; then
+      if [ "$currentSrc" = "$SRC" ]; then
         skip=true;
       else
         user "File already exists: $DST ($(basename "$SRC")), what do you want to do?\n\
@@ -83,30 +61,30 @@ link_file () {
     backup=${backup:-$backup_all}
     skip=${skip:-$skip_all}
 
-    if [ "$overwrite" == "true" ]; then
+    if [ "$overwrite" = "true" ]; then
       rm -rf "$DST"
       success "removed $DST"
     fi
 
-    if [ "$backup" == "true" ]; then
+    if [ "$backup" = "true" ]; then
       mv "$DST" "${DST}.backup"
       success "moved $DST to ${DST}.backup"
     fi
 
-    if [ "$skip" == "true" ]; then
+    if [ "$skip" = "true" ]; then
       success "skipped $SRC"
     fi
   fi
 
   # "false" or empty
   if [ "$skip" != "true" ]; then
-    ln -s "$1" "$2"
-    success "linked $1 to $2"
+    ln -f -s "$SRC" "$DST"
+    success "linked $SRC to $DST"
   fi
 }
 
-install_dotfiles () {
-  info 'installing dotfiles'
+link_files () {
+  info 'linking dotfiles'
 
   local overwrite_all=false backup_all=false skip_all=false
 
@@ -117,16 +95,4 @@ install_dotfiles () {
   done
 }
 
-setup_gitconfig
-install_dotfiles
-
-# info "installing dependencies"
-# if source scripts/dependencies-install.sh
-# then
-#   success "dependencies installed"
-# else
-#   fail "error installing dependencies"
-# fi
-
-echo ''
-success '  All installed!'
+link_files

@@ -3,12 +3,12 @@ cask_args appdir: '/Applications'
 tap 'homebrew/bundle'
 
 brew 'ack' # grep
-brew 'asdf' # https://github.com/asdf-vm/asdf
+brew 'asdf'
 brew 'bat' # cat
 brew 'coreutils' # https://apple.stackexchange.com/questions/69223/how-to-replace-mac-os-x-utilities-with-gnu-core-utilities
 brew 'fd' # find
 brew 'fzf' # fuzzy finder
-brew 'jq' # json query
+brew 'jq'
 brew 'openssl'
 brew 'readline'
 brew 'switchaudio-osx'

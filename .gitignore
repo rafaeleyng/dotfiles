@@ -1,8 +1,3 @@
-extensions
-
-Brewfile.lock.json
-
-# local files, temp stuff
-local/
-local.zsh
+extensions/*
+!extensions/.gitkeep
 .local

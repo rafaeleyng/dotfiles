@@ -1,10 +1,10 @@
 [include]
+  # user info I don't want to commit
   path = ~/.gitconfig-local
+  # work-related info I don't want to commit
   path = ~/.gitconfig-extensions-work
 [credential]
   helper = osxkeychain
-[hub]
-  protocol = https
 [color]
   diff = auto
   status = auto

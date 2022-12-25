@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # remap keys
 # https://developer.apple.com/library/archive/technotes/tn2450/_index.html
 # caps lock to shift

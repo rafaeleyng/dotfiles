@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 #
 # pulls all repos inside extensions folder
 export DOTFILES="$HOME/.dotfiles"
