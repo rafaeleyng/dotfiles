@@ -81,7 +81,7 @@ zstyle ':completion:*' insert-tab pending
 ######################################
 # variables
 ######################################
-export DOTFILES_DEBUG="1" # change to "1" to print debug information
+export DOTFILES_DEBUG="0" # change to "1" to print debug information
 export PATH="$DOTFILES/common/bin:~/bin:/usr/local/sbin:$PATH"
 export EDITOR='code'
 export PROJECTS=~/code
