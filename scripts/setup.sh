@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 source scripts/setup-gitconfig.sh
 source scripts/setup-symlinks.sh
