@@ -6,9 +6,9 @@
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
-fpath=($DOTFILES/features/zsh $fpath)
+fpath=($DOTFILES/common/zsh $fpath)
 
-autoload -U $DOTFILES/features/zsh/*(:t)
+autoload -U $DOTFILES/common/zsh/*(:t)
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -82,7 +82,7 @@ zstyle ':completion:*' insert-tab pending
 # variables
 ######################################
 export DOTFILES_DEBUG="0" # change to "1" to print debug information
-export PATH="$DOTFILES/features/bin:~/bin:/usr/local/sbin:$PATH"
+export PATH="$DOTFILES/common/bin:~/bin:/usr/local/sbin:$PATH"
 export EDITOR='code'
 export PROJECTS=~/code
 
@@ -96,7 +96,6 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pa
 # fzf - https://github.com/junegunn/fzf
 ########################################
 if [[ -f ~/.fzf.zsh ]]; then
-  # shellcheck disable=SC1090
   source ~/.fzf.zsh
 fi
 alias preview="fzf --preview 'bat --color \"always\" {}'"
@@ -112,5 +111,5 @@ export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(e {})+abort'"
 ########################################
 # temp
 ########################################
-ZSH_TEMP="$DOTFILES"/features/zsh/temp.zsh
+ZSH_TEMP="$DOTFILES"/common/zsh/temp.zsh
 [[ -f "$ZSH_TEMP" ]] && source "$ZSH_TEMP"
