@@ -1,3 +1,5 @@
+zmodload zsh/zprof
+
 export DOTFILES="$HOME/.dotfiles"
 ZSH_CONFIG=$DOTFILES/features/zsh/index.zsh
 TIME_START=$(($(gdate +%s%N) / 1000000))
@@ -10,21 +12,14 @@ local function compute_load_time () {
   fi
 }
 
-# https://unix.stackexchange.com/a/151896/148053 - I don't understand, but it is what it is
-local function _source () {
-  local -r FILE="$1"
-  shift
-  source "$FILE" "$@"
-}
-
 local function source_local () {
   if [[ -a $DOTFILES/.local ]]; then
-    _source $DOTFILES/.local
+    source $DOTFILES/.local
   fi
 }
 
 local function source_zsh_index () {
-  _source "$ZSH_CONFIG"
+  source "$ZSH_CONFIG"
 }
 
 function source_non_zsh_index () {
@@ -34,7 +29,7 @@ function source_non_zsh_index () {
 
   for FILE in $FILES; do
     if [ $FILE != $ZSH_CONFIG ]; then
-      _source $FILE
+      source $FILE
     fi
   done
 
@@ -51,7 +46,7 @@ function source_extensions () {
 
   for FILE in $FILES; do
     if [ $FILE != $ZSH_CONFIG ]; then
-      _source $FILE
+      source $FILE
     fi
   done
 
