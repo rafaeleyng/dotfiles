@@ -54,8 +54,8 @@ This project supports extensions, so you can isolate specifics to a separate rep
 Using extensions:
 
 ```sh
-# within the dotfiles, go to extensions folder
-cd extensions
+# within the dotfiles
+mkdir extensions && cd extensions
 
 # add as many extensions projects you want
 git clone https://github.com/<username>/<dotfiles-extension-personal>.git

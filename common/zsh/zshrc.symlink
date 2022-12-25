@@ -6,8 +6,7 @@ if [ "$UNAME" = "Darwin" ]; then
   TIME_START=$(($(gdate +%s%N) / 1000000))
   OS_SPECIFIC_FOLDER="macos"
 elif  [ "$UNAME" = "Linux" ]; then
-  echo TODO
-  TIME_START=0
+  TIME_START=$(($(date +%s%N) / 1000000))
   OS_SPECIFIC_FOLDER="ubuntu"
 else
   fail "unsupported OS ${UNAME}"
@@ -19,8 +18,7 @@ local function compute_load_time () {
     if [ "$UNAME" = "Darwin" ]; then
       local END=$(($(gdate +%s%N) / 1000000))
     elif  [ "$UNAME" = "Linux" ]; then
-      echo TODO
-      local END=$(($(gdate +%s%N) / 1000000))
+      local END=$(($(date +%s%N) / 1000000))
     fi
 
     echo "$((END-START))ms"
