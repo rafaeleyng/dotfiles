@@ -6,11 +6,11 @@ My dotfiles for Mac (and soon for Linux).
 
 - [`zsh`](https://zsh.sourceforge.io/)
 - [`oh-my-zsh`](https://ohmyz.sh/)
+- [`powerlevel10k`](https://github.com/romkatv/powerlevel10k)
 - [`asdf`](https://asdf-vm.com/)
 - [`z`](https://github.com/rupa/z)
 - `e`: opens the text editor configured in the `EDITOR` variable.
 - `update`: updates software (runs all `*/update.sh` files).
-- `chrome [<filename>]`: to open Google Chrome.
 - `pubkey`: copy `~/.ssh/id_rsa.pub` to clipboard.
 - `c <tab>`, go to my code folders.
 - `extract <file>`: knows how to unzip several formats.

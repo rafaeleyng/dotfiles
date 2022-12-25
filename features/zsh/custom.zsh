@@ -11,9 +11,8 @@ export PROJECTS=~/code
 ########################################
 # aliases
 ########################################
-alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+alias a='asdf'
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'" # copy public key to clipboard
-alias goland='/usr/local/bin/goland'
 
 ########################################
 # fzf - https://github.com/junegunn/fzf
@@ -27,15 +26,13 @@ alias preview="fzf --preview 'bat --color \"always\" {}'"
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(e {})+abort'"
 
 ########################################
-# asdf - https://asdf-vm.com/
+# powerlevel10k
 ########################################
-alias a='asdf'
-# shellcheck disable=SC1091
-# TODO
-# source /usr/local/opt/asdf/asdf.sh
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# TODO make completions work
-# . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
-
-# export PATH="$PATH:/usr/local/smlnj/bin"
-echo TODO
+########################################
+# temp
+########################################
+ZSH_TEMP="$DOTFILES"/features/zsh/temp.zsh
+[[ -f "$ZSH_TEMP" ]] && source "$ZSH_TEMP"

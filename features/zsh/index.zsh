@@ -75,4 +75,4 @@ zstyle ':completion:*' insert-tab pending
 ######################################
 # customizations
 ######################################
-source $DOTFILES/features/zsh/custom.sh
+source $DOTFILES/features/zsh/custom.zsh
