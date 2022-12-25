@@ -37,6 +37,18 @@ local function source_zsh_index () {
   source "$ZSH_CONFIG"
 }
 
+function source_os_specific_indexes () {
+  typeset -U FILES
+
+  FILES=($DOTFILES/$OS_SPECIFIC_FOLDER/*/index.zsh)
+
+  for FILE in $FILES; do
+    source $FILE
+  done
+
+  unset FILES
+}
+
 function source_common_indexes () {
   typeset -U FILES
 
@@ -46,18 +58,6 @@ function source_common_indexes () {
     if [ $FILE != $ZSH_CONFIG ]; then
       source $FILE
     fi
-  done
-
-  unset FILES
-}
-
-function source_os_specific_indexes () {
-  typeset -U FILES
-
-  FILES=($DOTFILES/$OS_SPECIFIC_FOLDER/*/index.zsh)
-
-  for FILE in $FILES; do
-    source $FILE
   done
 
   unset FILES
@@ -82,8 +82,8 @@ function source_extensions () {
 
 source_local               # 1. Load local-only variables (not commited).
 source_zsh_index           # 2. Load zsh config index.zsh file, which sets critical variables.
-source_common_indexes      # 3. Load common index.zsh files.
-source_os_specific_indexes # 4. Load os-specific index.zsh files.
+source_os_specific_indexes # 3. Load os-specific index.zsh files.
+source_common_indexes      # 4. Load common index.zsh files.
 source_extensions          # 5. Load index.zsh from extensions (doesn't take OS into account).
 
 # initialize autocomplete here, otherwise functions won't be loaded

@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-# noop file for now
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
