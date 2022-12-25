@@ -1,5 +1,13 @@
 #!/bin/zsh
 
+######################################
+# variables
+######################################
+export DOTFILES_DEBUG="0" # change to "1" to print debug information
+export PATH="$DOTFILES/features/bin:~/bin:/usr/local/sbin:$PATH"
+export EDITOR='code'
+export PROJECTS=~/code
+
 ########################################
 # aliases
 ########################################

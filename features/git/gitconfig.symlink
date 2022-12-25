@@ -5,8 +5,6 @@
   path = ~/.gitconfig-extensions-work
 [credential]
   helper = osxkeychain
-[hub]
-  protocol = https
 [color]
   diff = auto
   status = auto

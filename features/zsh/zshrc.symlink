@@ -1,12 +1,12 @@
 export DOTFILES=$HOME/.dotfiles
-SYSTEM_CONFIG=$DOTFILES/features/system/index.zsh
+ZSH_CONFIG=$DOTFILES/features/zsh/index.zsh
 TIME_START=$(($(gdate +%s%N) / 1000000))
 
 local function compute_load_time () {
   local START=$1
   local END=$(($(gdate +%s%N) / 1000000))
   if [[ $DOTFILES_DEBUG = "1" ]]; then
-    echo "$((END-START)) mili-seconds"
+    echo "$((END-START)) milliseconds"
   fi
 }
 
@@ -23,17 +23,17 @@ local function source_local () {
   fi
 }
 
-local function source_system () {
-  _source "$SYSTEM_CONFIG"
+local function source_zsh () {
+  _source "$ZSH_CONFIG"
 }
 
-function source_non_system () {
+function source_non_zsh () {
   typeset -U FILES
 
   FILES=($DOTFILES/features/*/index.zsh)
 
   for FILE in $FILES; do
-    if [ $FILE != $SYSTEM_CONFIG ]; then
+    if [ $FILE != $ZSH_CONFIG ]; then
       _source $FILE
     fi
   done
@@ -50,7 +50,7 @@ function source_extensions () {
   fi
 
   for FILE in $FILES; do
-    if [ $FILE != $SYSTEM_CONFIG ]; then
+    if [ $FILE != $ZSH_CONFIG ]; then
       _source $FILE
     fi
   done
@@ -59,8 +59,8 @@ function source_extensions () {
 }
 
 source_local # load local-only variables (not commited)
-source_system # first source the system config, which sets critical variables...
-source_non_system # ...then sources other config files
+source_zsh # first source the system config, which sets critical variables...
+source_non_zsh # ...then sources other config files
 source_extensions
 
 # initialize autocomplete here, otherwise functions won't be loaded
