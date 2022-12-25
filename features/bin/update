@@ -1,6 +1,6 @@
 #!/bin/zsh
 #
-# run `update` periodically to make sure you're on the latest and greatest
+# run `update` periodically to update the dependencies
 
 export DOTFILES=$HOME/.dotfiles
-$DOTFILES/scripts/dependencies-update.sh
+$DOTFILES/scripts/update.sh
