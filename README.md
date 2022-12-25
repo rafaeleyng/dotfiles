@@ -87,4 +87,3 @@ docker-compose up
 - https://github.com/holman/dotfiles: inspiration.
 - https://github.com/holman/dotfiles/issues/70: I renamed of the variable `ZSH` to `DOTFILES`, to avoid conflicts between dotfiles and oh-my-zsh.
 - https://github.com/ryanb/dotfiles/blob/master/oh-my-zsh/custom/plugins/rbates/rbates.plugin.zsh: `c` function.
-- https://unix.stackexchange.com/questions/151889/why-does-bashs-source-command-behave-differently-when-called-from-a-function: I've used this question to source my files.
