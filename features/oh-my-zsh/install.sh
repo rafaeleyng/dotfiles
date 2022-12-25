@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 export ZSH=~/.oh-my-zsh
 

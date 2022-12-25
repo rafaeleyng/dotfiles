@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 echo "› MacOS update"
 # shellcheck disable=SC1090

@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 info () {
   printf "\r  [ \033[00;34m..\033[0m ] %s\n" "$1"
