@@ -1,11 +1,13 @@
 export DOTFILES="$HOME/.dotfiles"
 ZSH_CONFIG=$DOTFILES/common/zsh/index.zsh
-TIME_START=$(($(gdate +%s%N) / 1000000))
 
 UNAME=$(uname -s)
 if [ "$UNAME" = "Darwin" ]; then
+  TIME_START=$(($(gdate +%s%N) / 1000000))
   OS_SPECIFIC_FOLDER="macos"
 elif  [ "$UNAME" = "Linux" ]; then
+  echo TODO
+  TIME_START=0
   OS_SPECIFIC_FOLDER="ubuntu"
 else
   fail "unsupported OS ${UNAME}"
@@ -13,8 +15,14 @@ fi
 
 local function compute_load_time () {
   local START=$1
-  local END=$(($(gdate +%s%N) / 1000000))
   if [[ $DOTFILES_DEBUG = "1" ]]; then
+    if [ "$UNAME" = "Darwin" ]; then
+      local END=$(($(gdate +%s%N) / 1000000))
+    elif  [ "$UNAME" = "Linux" ]; then
+      echo TODO
+      local END=$(($(gdate +%s%N) / 1000000))
+    fi
+
     echo "$((END-START))ms"
   fi
 }
