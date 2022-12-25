@@ -1,8 +1,15 @@
-zmodload zsh/zprof
-
 export DOTFILES="$HOME/.dotfiles"
-ZSH_CONFIG=$DOTFILES/features/zsh/index.zsh
+ZSH_CONFIG=$DOTFILES/common/zsh/index.zsh
 TIME_START=$(($(gdate +%s%N) / 1000000))
+
+UNAME=$(uname -s)
+if [ "$UNAME" = "Darwin" ]; then
+  OS_SPECIFIC_FOLDER="macos"
+elif  [ "$UNAME" = "Linux" ]; then
+  OS_SPECIFIC_FOLDER="ubuntu"
+else
+  fail "unsupported OS ${UNAME}"
+fi
 
 local function compute_load_time () {
   local START=$1
@@ -22,15 +29,27 @@ local function source_zsh_index () {
   source "$ZSH_CONFIG"
 }
 
-function source_non_zsh_index () {
+function source_common_indexes () {
   typeset -U FILES
 
-  FILES=($DOTFILES/features/*/index.zsh)
+  FILES=($DOTFILES/common/*/index.zsh)
 
   for FILE in $FILES; do
     if [ $FILE != $ZSH_CONFIG ]; then
       source $FILE
     fi
+  done
+
+  unset FILES
+}
+
+function source_os_specific_indexes () {
+  typeset -U FILES
+
+  FILES=($DOTFILES/$OS_SPECIFIC_FOLDER/*/index.zsh)
+
+  for FILE in $FILES; do
+    source $FILE
   done
 
   unset FILES
@@ -53,10 +72,11 @@ function source_extensions () {
   unset FILES
 }
 
-source_local # load local-only variables (not commited)
-source_zsh_index # first source the zsh config, which sets critical variables...
-source_non_zsh_index # ...then sources other config files
-source_extensions
+source_local               # 1. Load local-only variables (not commited).
+source_zsh_index           # 2. Load zsh config index.zsh file, which sets critical variables.
+source_common_indexes      # 3. Load common index.zsh files.
+source_os_specific_indexes # 4. Load os-specific index.zsh files.
+source_extensions          # 5. Load index.zsh from extensions (doesn't take OS into account).
 
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
