@@ -5,12 +5,13 @@
 DOTFILES="$HOME/.dotfiles"
 source "$DOTFILES"/common/utils.sh
 
-OS_SPECIFIC_FOLDER=$(os_specific_folder)
+OS_SUFFIX=$(os_suffix)
 
 find \
-  -H "$DOTFILES/common" "$DOTFILES/$OS_SPECIFIC_FOLDER" "$DOTFILES/extensions" \
+  -H "$DOTFILES/common" "$DOTFILES/extensions" \
+  -type f \
   -maxdepth 4 \
-  -name 'install.sh' \
+  \( -name "install.sh" -o -name "install.sh.$OS_SUFFIX" \) \
   -not -path '*.git*' \
   -exec sh -c 'FILE="$1"; "$FILE"' _ {} \;
 

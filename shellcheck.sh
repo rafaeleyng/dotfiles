@@ -3,7 +3,7 @@
 shellcheck --exclude=SC1071 \
   ./common/*.sh \
   ./common/*/*.*sh \
-  ./macos/*/*.*sh \
-  ./linux/*/*.*sh \
+  ./common/*/*.*sh.linux \
+  ./common/*/*.*sh.macos \
   ./scripts/*.sh \
   ./common/zsh/zshrc.symlink

@@ -73,9 +73,24 @@ link_files () {
 
   local overwrite_all=false backup_all=false skip_all=false
 
-  # shellcheck disable=SC2044
-  for SRC in $(find -H "$DOTFILES" -maxdepth 4 -name '*.symlink' -not -path '*.git*'); do
+  OS_SUFFIX=$(os_suffix)
+
+  local FILES=$(find \
+    -H "$DOTFILES/common" "$DOTFILES/extensions" \
+    -type f \
+    -maxdepth 4 \
+    \( -name "*.symlink" -o -name "*.symlink.$OS_SUFFIX" \) \
+    -not -path '*.git*')
+
+  for SRC in $FILES; do
+    # either remove .symlink or OS suffix
     DST="$HOME/.$(basename "${SRC%.*}")"
+
+    # remove .symlink in case the previous had to remove the OS suffix
+    if [[ "$DST" = *.symlink ]]; then
+      DST="$HOME/$(basename "${DST%.*}")"
+    fi
+
     link_file "$SRC" "$DST"
   done
 }

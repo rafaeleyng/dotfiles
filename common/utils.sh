@@ -28,13 +28,13 @@ is_linux () {
   return
 }
 
-os_specific_folder () {
+os_suffix () {
   if is_macos; then
     echo "macos"
   elif is_linux; then
     echo "linux"
   else
-    fail "os_specific_folder: unsupported OS"
+    fail "os_suffix: unsupported OS"
   fi
 }
 

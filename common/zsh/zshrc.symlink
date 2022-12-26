@@ -4,7 +4,6 @@ export DOTFILES="$HOME/.dotfiles"
 ZSH_CONFIG=$DOTFILES/common/zsh/index.zsh
 source "$DOTFILES"/common/utils.sh
 
-OS_SPECIFIC_FOLDER=$(os_specific_folder)
 TIME_START=$(os_time)
 
 local function compute_load_time () {
@@ -28,7 +27,8 @@ local function source_zsh_index () {
 function source_os_specific_indexes () {
   typeset -U FILES
 
-  FILES=($DOTFILES/$OS_SPECIFIC_FOLDER/*/index.zsh)
+  OS_SUFFIX=$(os_suffix)
+  FILES=($DOTFILES/common/*/index.zsh.$OS_SUFFIX)
 
   for FILE in $FILES; do
     source $FILE

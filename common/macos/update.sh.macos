@@ -1,0 +1,7 @@
+#!/bin/bash
+
+DOTFILES="$HOME/.dotfiles"
+source "$DOTFILES"/common/utils.sh
+
+info "MacOS update"
+source "$DOTFILES"/common/macos/install.sh.macos

@@ -1,5 +1,7 @@
 {
   "files.associations": {
-    "*.symlink": "shellscript"
+    "*.symlink": "shellscript",
+    "*.macos": "shellscript",
+    "*.linux": "shellscript"
   }
 }
