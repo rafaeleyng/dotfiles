@@ -28,7 +28,7 @@ function source_features_indexes () {
   typeset -U FILES
 
   OS_SUFFIX=$(os_suffix)
-  FILES=($DOTFILES/features/*/index.zsh $DOTFILES/features/*/index.zsh.$OS_SUFFIX)
+  FILES=($DOTFILES/features/*/index.zsh.$OS_SUFFIX $DOTFILES/features/*/index.zsh)
 
   for FILE in $FILES; do
     if [ $FILE != $ZSH_CONFIG ]; then

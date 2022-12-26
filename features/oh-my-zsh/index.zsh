@@ -8,6 +8,3 @@ DEFAULT_USER=$(whoami)
 plugins=(docker docker-compose git z)
 
 source $ZSH/oh-my-zsh.sh # This is the slowest sourcing of the startup
-# TODO
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source /home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
