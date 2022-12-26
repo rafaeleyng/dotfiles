@@ -75,7 +75,8 @@ link_files () {
 
   OS_SUFFIX=$(os_suffix)
 
-  local FILES=$(find \
+  local FILES
+  FILES=$(find \
     -H "$DOTFILES/features" "$DOTFILES/extensions" \
     -type f \
     -maxdepth 4 \
