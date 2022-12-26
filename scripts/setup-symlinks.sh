@@ -3,7 +3,7 @@
 # links all *.symlink files (except for git)
 
 DOTFILES="$HOME/.dotfiles"
-source "$DOTFILES"/common/utils.sh
+source "$DOTFILES"/features/utils.sh
 
 link_file () {
   local SRC=$1 DST=$2
@@ -76,7 +76,7 @@ link_files () {
   OS_SUFFIX=$(os_suffix)
 
   local FILES=$(find \
-    -H "$DOTFILES/common" "$DOTFILES/extensions" \
+    -H "$DOTFILES/features" "$DOTFILES/extensions" \
     -type f \
     -maxdepth 4 \
     \( -name "*.symlink" -o -name "*.symlink.$OS_SUFFIX" \) \

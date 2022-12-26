@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DOTFILES="$HOME/.dotfiles"
-source "$DOTFILES"/common/utils.sh
+source "$DOTFILES"/features/utils.sh
 
 # Check for brew
 if test ! "$(command -v brew)"; then
@@ -11,6 +11,6 @@ fi
 
 # Run brew through the Brewfile
 info "brew bundle"
-brew bundle --file="common/brew/Brewfile"
+brew bundle --file="features/brew/Brewfile"
 
 exit 0

@@ -6,9 +6,9 @@
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
-fpath=($DOTFILES/common/zsh $fpath)
+fpath=($DOTFILES/features/zsh $fpath)
 
-autoload -U $DOTFILES/common/zsh/*(:t)
+autoload -U $DOTFILES/features/zsh/*(:t)
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -81,8 +81,8 @@ zstyle ':completion:*' insert-tab pending
 ######################################
 # variables
 ######################################
-export DOTFILES_DEBUG="1" # change to "1" to print debug information
-export PATH="$DOTFILES/common/bin:~/bin:/usr/local/sbin:$PATH"
+export DOTFILES_DEBUG="0" # change to "1" to print debug information
+export PATH="$DOTFILES/features/bin:~/bin:/usr/local/sbin:$PATH"
 export EDITOR='code'
 export PROJECTS=~/code
 
@@ -111,5 +111,5 @@ export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(e {})+abort'"
 ########################################
 # temp
 ########################################
-ZSH_TEMP="$DOTFILES"/common/zsh/temp.zsh
+ZSH_TEMP="$DOTFILES"/features/zsh/temp.zsh
 [[ -f "$ZSH_TEMP" ]] && source "$ZSH_TEMP"

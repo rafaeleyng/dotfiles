@@ -33,11 +33,9 @@ git clone https://github.com/rafaeleyng/dotfiles.git ~/.dotfiles && cd ~/.dotfil
 
 Notable folders:
 
-- `common`: each subfolder contains configuration for some feature. Notable examples:
+- `features`: each subfolder contains configuration for some feature. Notable examples:
   - `bin/`: files are added to `$PATH` and made available everywhere, and are executed in a child process.
   - `functions/`: files are added to `$fpath` and made available everywhere, and are executed in the current process.
-- `macos`: contains macOS-specific files;
-- `linux`: contains Linux-specific files;
 - `scripts`: scripts that you can run manually, to either install this dotfiles project or install/update the dependencies it specifies.
 
 ### special files
@@ -46,6 +44,8 @@ Notable folders:
 - `*/*.symlink`: files that get symlinked (without the `*.symlink` extension) into your `$HOME` when you run `./scripts/setup.sh`.
 - `*/install.sh`: files that are run when you run `./scripts/install.sh` (and also `./scripts/setup.sh`).
 - `*/update.sh`: files that are run when you run `./scripts/update.sh`.
+
+For the 4 types above, files with the added suffix `.macos` or `.linux`, they will only be applied to when running on that OS.
 
 ### extensions
 
@@ -71,7 +71,7 @@ scripts/setup.sh
 ```
 
 Currently supported features inside extensions:
-- `git/gitconfig.extension.symlink`: extends `common/git/gitconfig.symlink` and gets symlinked into your `$HOME`;
+- `git/gitconfig.extension.symlink`: extends `features/git/gitconfig.symlink` and gets symlinked into your `$HOME`;
 - `<some-dir>/index.zsh`: files called `index.zsh` get loaded into your environment when a shell is loaded.
 
 ---

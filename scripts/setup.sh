@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DOTFILES="$HOME/.dotfiles"
-source "$DOTFILES"/common/utils.sh
+source "$DOTFILES"/features/utils.sh
 
 source scripts/setup-gitconfig.sh
 source scripts/setup-symlinks.sh

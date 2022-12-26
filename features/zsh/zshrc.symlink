@@ -1,8 +1,8 @@
 #!/bin/zsh
 
 export DOTFILES="$HOME/.dotfiles"
-ZSH_CONFIG=$DOTFILES/common/zsh/index.zsh
-source "$DOTFILES"/common/utils.sh
+ZSH_CONFIG=$DOTFILES/features/zsh/index.zsh
+source "$DOTFILES"/features/utils.sh
 
 TIME_START=$(os_time)
 
@@ -28,7 +28,7 @@ function source_os_specific_indexes () {
   typeset -U FILES
 
   OS_SUFFIX=$(os_suffix)
-  FILES=($DOTFILES/common/*/index.zsh.$OS_SUFFIX)
+  FILES=($DOTFILES/features/*/index.zsh.$OS_SUFFIX)
 
   for FILE in $FILES; do
     source $FILE
@@ -37,10 +37,10 @@ function source_os_specific_indexes () {
   unset FILES
 }
 
-function source_common_indexes () {
+function source_features_indexes () {
   typeset -U FILES
 
-  FILES=($DOTFILES/common/*/index.zsh)
+  FILES=($DOTFILES/features/*/index.zsh)
 
   for FILE in $FILES; do
     if [ $FILE != $ZSH_CONFIG ]; then
@@ -71,7 +71,7 @@ function source_extensions () {
 source_local               # 1. Load local-only variables (not commited).
 source_zsh_index           # 2. Load zsh config index.zsh file, which sets critical variables.
 source_os_specific_indexes # 3. Load os-specific index.zsh files.
-source_common_indexes      # 4. Load common index.zsh files.
+source_features_indexes      # 4. Load features index.zsh files.
 source_extensions          # 5. Load index.zsh from extensions (doesn't take OS into account).
 
 # initialize autocomplete here, otherwise functions won't be loaded

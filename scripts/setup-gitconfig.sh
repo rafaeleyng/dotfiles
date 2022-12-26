@@ -3,10 +3,10 @@
 # setups gitconfig
 
 DOTFILES="$HOME/.dotfiles"
-source "$DOTFILES"/common/utils.sh
+source "$DOTFILES"/features/utils.sh
 
 setup_gitconfig () {
-  if ! [ -f common/git/gitconfig-local.symlink ]; then
+  if ! [ -f features/git/gitconfig-local.symlink ]; then
     info 'setup gitconfig'
 
     user ' - What is your github author name?'
@@ -17,7 +17,7 @@ setup_gitconfig () {
     sed \
       -e "s/AUTHORNAME/$git_authorname/g" \
       -e "s/AUTHOREMAIL/$git_authoremail/g" \
-      common/git/gitconfig-local.symlink.example > common/git/gitconfig-local.symlink
+      features/git/gitconfig-local.symlink.example > features/git/gitconfig-local.symlink
 
     success 'gitconfig'
   fi
