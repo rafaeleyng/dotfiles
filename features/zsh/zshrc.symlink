@@ -24,23 +24,11 @@ local function source_zsh_index () {
   source "$ZSH_CONFIG"
 }
 
-function source_os_specific_indexes () {
-  typeset -U FILES
-
-  OS_SUFFIX=$(os_suffix)
-  FILES=($DOTFILES/features/*/index.zsh.$OS_SUFFIX)
-
-  for FILE in $FILES; do
-    source $FILE
-  done
-
-  unset FILES
-}
-
 function source_features_indexes () {
   typeset -U FILES
 
-  FILES=($DOTFILES/features/*/index.zsh)
+  OS_SUFFIX=$(os_suffix)
+  FILES=($DOTFILES/features/*/index.zsh $DOTFILES/features/*/index.zsh.$OS_SUFFIX)
 
   for FILE in $FILES; do
     if [ $FILE != $ZSH_CONFIG ]; then
@@ -70,9 +58,8 @@ function source_extensions () {
 
 source_local               # 1. Load local-only variables (not commited).
 source_zsh_index           # 2. Load zsh config index.zsh file, which sets critical variables.
-source_os_specific_indexes # 3. Load os-specific index.zsh files.
-source_features_indexes      # 4. Load features index.zsh files.
-source_extensions          # 5. Load index.zsh from extensions (doesn't take OS into account).
+source_features_indexes    # 3. Load features index.zsh files.
+source_extensions          # 4. Load index.zsh from extensions (doesn't take OS into account).
 
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
