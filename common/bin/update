@@ -2,5 +2,5 @@
 #
 # run `update` periodically to update the dependencies
 
-export DOTFILES="$HOME/.dotfiles"
+DOTFILES="$HOME/.dotfiles"
 $DOTFILES/scripts/update.sh

@@ -1,14 +1,9 @@
 #!/bin/bash
+#
+# runs all install.sh files
 
-# run all install.sh files
-
-fail () {
-  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] %s\n" "$1"
-  echo ''
-  exit
-}
-
-export DOTFILES="$HOME/.dotfiles"
+DOTFILES="$HOME/.dotfiles"
+source "$DOTFILES"/common/utils.sh
 
 UNAME=$(uname -s)
 if [ "$UNAME" = "Darwin" ]; then
@@ -26,3 +21,5 @@ find \
   -name 'install.sh' \
   -not -path '*.git*' \
   -exec sh -c 'FILE="$1"; "$FILE"' _ {} \;
+
+success 'install.sh finished'

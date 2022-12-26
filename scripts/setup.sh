@@ -1,15 +1,10 @@
 #!/bin/bash
 
+DOTFILES="$HOME/.dotfiles"
+source "$DOTFILES"/common/utils.sh
+
 source scripts/setup-gitconfig.sh
 source scripts/setup-symlinks.sh
+source scripts/install.sh
 
-info "installing dependencies"
-if source scripts/install.sh
-then
-  success "dependencies installed"
-else
-  fail "error installing dependencies"
-fi
-
-echo ''
-success '  Setup finished!'
+success 'setup.sh finished'
