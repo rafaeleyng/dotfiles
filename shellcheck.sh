@@ -1,3 +1,9 @@
 #!/bin/zsh
 
-shellcheck --exclude=SC1071 ./common/*/*.*sh ./macos/*/*.*sh ./ubuntu/*/*.*sh ./scripts/*.sh
+shellcheck --exclude=SC1071 \
+  ./scripts/*.sh \
+  ./features/*.sh \
+  ./features/*/*.*sh \
+  ./features/*/*.*sh.linux \
+  ./features/*/*.*sh.macos \
+  ./features/zsh/zshrc.symlink

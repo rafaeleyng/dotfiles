@@ -1,24 +1,9 @@
 #!/bin/bash
+#
+# links all *.symlink files (except for git)
 
-export DOTFILES="$HOME/.dotfiles"
-
-info () {
-  printf "\r  [ \033[00;34m..\033[0m ] %s\n" "$1"
-}
-
-user () {
-  printf "\r  [ \033[0;33m??\033[0m ] %s\n" "$1"
-}
-
-success () {
-  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] %s\n" "$1"
-}
-
-fail () {
-  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] %s\n" "$1"
-  echo ''
-  exit
-}
+DOTFILES="$HOME/.dotfiles"
+source "$DOTFILES"/features/utils.sh
 
 link_file () {
   local SRC=$1 DST=$2
@@ -88,11 +73,29 @@ link_files () {
 
   local overwrite_all=false backup_all=false skip_all=false
 
-  # shellcheck disable=SC2044
-  for SRC in $(find -H "$DOTFILES" -maxdepth 4 -name '*.symlink' -not -path '*.git*'); do
+  OS_SUFFIX=$(os_suffix)
+
+  local FILES
+  FILES=$(find \
+    -H "$DOTFILES/features" "$DOTFILES/extensions" \
+    -type f \
+    -maxdepth 4 \
+    \( -name "*.symlink" -o -name "*.symlink.$OS_SUFFIX" \) \
+    -not -path '*.git*')
+
+  for SRC in $FILES; do
+    # either remove .symlink or OS suffix
     DST="$HOME/.$(basename "${SRC%.*}")"
+
+    # remove .symlink in case the previous had to remove the OS suffix
+    if [[ "$DST" = *.symlink ]]; then
+      DST="$HOME/$(basename "${DST%.*}")"
+    fi
+
     link_file "$SRC" "$DST"
   done
 }
 
 link_files
+
+success 'setup-symlinks.sh finished'

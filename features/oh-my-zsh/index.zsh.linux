@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+source /home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

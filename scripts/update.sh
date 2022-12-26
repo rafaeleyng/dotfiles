@@ -1,28 +1,18 @@
 #!/bin/bash
+#
+# runs all update.sh files
 
-# run all update.sh files
+DOTFILES="$HOME/.dotfiles"
+source "$DOTFILES"/features/utils.sh
 
-fail () {
-  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] %s\n" "$1"
-  echo ''
-  exit
-}
+OS_SUFFIX=$(os_suffix)
 
-export DOTFILES="$HOME/.dotfiles"
-
-UNAME=$(uname -s)
-if [ "$UNAME" = "Darwin" ]; then
-  OS_SPECIFIC_FOLDER="macos"
-elif  [ "$UNAME" = "Linux" ]; then
-  OS_SPECIFIC_FOLDER="ubuntu"
-else
-  fail "unsupported OS ${UNAME}"
-fi
-
-cd "$(dirname "$0")"/.. || exit
 find \
-  -H "$DOTFILES/common" "$DOTFILES/$OS_SPECIFIC_FOLDER" "$DOTFILES/extensions" \
+  -H "$DOTFILES/features" "$DOTFILES/extensions" \
+  -type f \
   -maxdepth 4 \
-  -name 'update.sh' \
+  \( -name "update.sh" -o -name "update.sh.$OS_SUFFIX" \) \
   -not -path '*.git*' \
   -exec sh -c 'FILE="$1"; "$FILE"' _ {} \;
+
+success 'update.sh finished'

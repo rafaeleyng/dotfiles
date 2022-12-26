@@ -33,11 +33,9 @@ git clone https://github.com/rafaeleyng/dotfiles.git ~/.dotfiles && cd ~/.dotfil
 
 Notable folders:
 
-- `common`: each subfolder contains configuration for some feature. Notable examples:
+- `features`: each subfolder contains configuration for some feature. Notable examples:
   - `bin/`: files are added to `$PATH` and made available everywhere, and are executed in a child process.
   - `functions/`: files are added to `$fpath` and made available everywhere, and are executed in the current process.
-- `macos`: contains macOS-specific files;
-- `ubuntu`: contains Ubuntu-specific files;
 - `scripts`: scripts that you can run manually, to either install this dotfiles project or install/update the dependencies it specifies.
 
 ### special files
@@ -47,6 +45,8 @@ Notable folders:
 - `*/install.sh`: files that are run when you run `./scripts/install.sh` (and also `./scripts/setup.sh`).
 - `*/update.sh`: files that are run when you run `./scripts/update.sh`.
 
+For the 4 types above, files with the added suffix `.macos` or `.linux`, they will only be applied to when running on that OS.
+
 ### extensions
 
 This project supports extensions, so you can isolate specifics to a separate repo. For instance, using different extensions in different machines.
@@ -54,8 +54,8 @@ This project supports extensions, so you can isolate specifics to a separate rep
 Using extensions:
 
 ```sh
-# within the dotfiles, go to extensions folder
-cd extensions
+# within the dotfiles
+mkdir extensions && cd extensions
 
 # add as many extensions projects you want
 git clone https://github.com/<username>/<dotfiles-extension-personal>.git
@@ -71,7 +71,7 @@ scripts/setup.sh
 ```
 
 Currently supported features inside extensions:
-- `git/gitconfig.extension.symlink`: extends `common/git/gitconfig.symlink` and gets symlinked into your `$HOME`;
+- `git/gitconfig.extension.symlink`: extends `features/git/gitconfig.symlink` and gets symlinked into your `$HOME`;
 - `<some-dir>/index.zsh`: files called `index.zsh` get loaded into your environment when a shell is loaded.
 
 ---

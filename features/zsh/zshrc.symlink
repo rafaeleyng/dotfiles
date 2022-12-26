@@ -1,20 +1,15 @@
-export DOTFILES="$HOME/.dotfiles"
-ZSH_CONFIG=$DOTFILES/common/zsh/index.zsh
-TIME_START=$(($(gdate +%s%N) / 1000000))
+#!/bin/zsh
 
-UNAME=$(uname -s)
-if [ "$UNAME" = "Darwin" ]; then
-  OS_SPECIFIC_FOLDER="macos"
-elif  [ "$UNAME" = "Linux" ]; then
-  OS_SPECIFIC_FOLDER="ubuntu"
-else
-  fail "unsupported OS ${UNAME}"
-fi
+export DOTFILES="$HOME/.dotfiles"
+ZSH_CONFIG=$DOTFILES/features/zsh/index.zsh
+source "$DOTFILES"/features/utils.sh
+
+TIME_START=$(os_time)
 
 local function compute_load_time () {
   local START=$1
-  local END=$(($(gdate +%s%N) / 1000000))
   if [[ $DOTFILES_DEBUG = "1" ]]; then
+    END=$(os_time)
     echo "$((END-START))ms"
   fi
 }
@@ -29,27 +24,16 @@ local function source_zsh_index () {
   source "$ZSH_CONFIG"
 }
 
-function source_common_indexes () {
+function source_features_indexes () {
   typeset -U FILES
 
-  FILES=($DOTFILES/common/*/index.zsh)
+  OS_SUFFIX=$(os_suffix)
+  FILES=($DOTFILES/features/*/index.zsh.$OS_SUFFIX $DOTFILES/features/*/index.zsh)
 
   for FILE in $FILES; do
     if [ $FILE != $ZSH_CONFIG ]; then
       source $FILE
     fi
-  done
-
-  unset FILES
-}
-
-function source_os_specific_indexes () {
-  typeset -U FILES
-
-  FILES=($DOTFILES/$OS_SPECIFIC_FOLDER/*/index.zsh)
-
-  for FILE in $FILES; do
-    source $FILE
   done
 
   unset FILES
@@ -74,9 +58,8 @@ function source_extensions () {
 
 source_local               # 1. Load local-only variables (not commited).
 source_zsh_index           # 2. Load zsh config index.zsh file, which sets critical variables.
-source_common_indexes      # 3. Load common index.zsh files.
-source_os_specific_indexes # 4. Load os-specific index.zsh files.
-source_extensions          # 5. Load index.zsh from extensions (doesn't take OS into account).
+source_features_indexes    # 3. Load features index.zsh files.
+source_extensions          # 4. Load index.zsh from extensions (doesn't take OS into account).
 
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
