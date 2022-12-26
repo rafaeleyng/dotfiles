@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 export DOTFILES="$HOME/.dotfiles"
 ZSH_CONFIG=$DOTFILES/common/zsh/index.zsh
 source "$DOTFILES"/common/utils.sh
