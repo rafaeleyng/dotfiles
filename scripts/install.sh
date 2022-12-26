@@ -14,7 +14,7 @@ UNAME=$(uname -s)
 if [ "$UNAME" = "Darwin" ]; then
   OS_SPECIFIC_FOLDER="macos"
 elif  [ "$UNAME" = "Linux" ]; then
-  OS_SPECIFIC_FOLDER="ubuntu"
+  OS_SPECIFIC_FOLDER="linux"
 else
   fail "unsupported OS ${UNAME}"
 fi

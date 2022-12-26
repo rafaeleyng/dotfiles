@@ -7,7 +7,7 @@ if [ "$UNAME" = "Darwin" ]; then
   OS_SPECIFIC_FOLDER="macos"
 elif  [ "$UNAME" = "Linux" ]; then
   TIME_START=$(($(date +%s%N) / 1000000))
-  OS_SPECIFIC_FOLDER="ubuntu"
+  OS_SPECIFIC_FOLDER="linux"
 else
   fail "unsupported OS ${UNAME}"
 fi

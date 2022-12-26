@@ -37,7 +37,7 @@ Notable folders:
   - `bin/`: files are added to `$PATH` and made available everywhere, and are executed in a child process.
   - `functions/`: files are added to `$fpath` and made available everywhere, and are executed in the current process.
 - `macos`: contains macOS-specific files;
-- `ubuntu`: contains Ubuntu-specific files;
+- `linux`: contains Linux-specific files;
 - `scripts`: scripts that you can run manually, to either install this dotfiles project or install/update the dependencies it specifies.
 
 ### special files
