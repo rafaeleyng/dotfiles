@@ -113,3 +113,8 @@ export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(e {})+abort'"
 ########################################
 ZSH_TEMP="$DOTFILES"/features/zsh/temp.zsh
 [[ -f "$ZSH_TEMP" ]] && source "$ZSH_TEMP"
+
+########################################
+# asdf - https://asdf-vm.com/
+########################################
+source $(brew --prefix asdf)/libexec/asdf.sh
