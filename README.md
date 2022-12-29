@@ -70,9 +70,7 @@ cd ..
 scripts/setup.sh
 ```
 
-Currently supported features inside extensions:
-- `git/gitconfig.extension.symlink`: extends `features/git/gitconfig.symlink` and gets symlinked into your `$HOME`;
-- `<some-dir>/index.zsh`: files called `index.zsh` get loaded into your environment when a shell is loaded.
+Inside the extensions you can have any of the [special files](#special-files), and they will be processed accordingly.
 
 ---
 
