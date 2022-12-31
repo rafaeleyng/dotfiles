@@ -1,7 +1,6 @@
 [include]
-  # user info I don't want to commit
   path = ~/.gitconfig-local
-  # work-related info I don't want to commit
+  path = ~/.gitconfig-extensions-personal
   path = ~/.gitconfig-extensions-work
 [credential]
   helper = osxkeychain
@@ -46,3 +45,5 @@
   diffFilter = delta --color-only
 [init]
 	defaultBranch = main
+[commit]
+	gpgsign = true
