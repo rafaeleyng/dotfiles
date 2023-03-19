@@ -1,6 +1,6 @@
 # dotfiles
 
-My dotfiles for Mac (and soon for Linux).
+My dotfiles for Linux and Mac.
 
 ## highlights
 
@@ -40,6 +40,7 @@ Notable folders:
 
 ### special files
 
+- `*/path.zsh`: files that get loaded into your environment when a shell is loaded, before `*/index.zsh` are loaded. These files should only set path variables.
 - `*/index.zsh`: files that get loaded into your environment when a shell is loaded.
 - `*/*.symlink`: files that get symlinked (without the `*.symlink` extension) into your `$HOME` when you run `./scripts/setup.sh`.
 - `*/install.sh`: files that are run when you run `./scripts/install.sh` (and also `./scripts/setup.sh`).
