@@ -6,3 +6,6 @@
 
 # I can prefix any file with `rafael-local.` to make it gitignored
 rafael-local.*
+
+# local history vs code extension
+.history/

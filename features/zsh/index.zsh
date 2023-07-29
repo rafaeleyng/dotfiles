@@ -11,8 +11,8 @@ fpath=($DOTFILES/features/functions $fpath)
 autoload -U $DOTFILES/features/functions/*(:t)
 
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+export HISTSIZE=1000000000
+export SAVEHIST=$HISTSIZE
 
 setopt NO_BG_NICE # don't nice background tasks
 setopt NO_HUP
@@ -108,7 +108,6 @@ export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(e {})+abort'"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 ########################################
-# temp
+# safe-rm
 ########################################
-ZSH_TEMP="$DOTFILES"/features/zsh/temp.zsh
-[[ -f "$ZSH_TEMP" ]] && source "$ZSH_TEMP"
+alias rm="safe-rm"
