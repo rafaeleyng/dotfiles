@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 DOTFILES="$HOME/.dotfiles"
 source "$DOTFILES"/features/utils.sh
 
