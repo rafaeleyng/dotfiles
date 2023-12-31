@@ -9,8 +9,8 @@ OS_SUFFIX=$(os_suffix)
 
 find \
   -H "$DOTFILES/features" "$DOTFILES/extensions" \
-  -type f \
   -maxdepth 4 \
+  -type f \
   \( -name "install.sh" -o -name "install.sh.$OS_SUFFIX" \) \
   -not -path '*.git*' \
   -exec sh -c 'FILE="$1"; "$FILE"' _ {} \;
