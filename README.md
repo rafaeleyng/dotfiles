@@ -1,6 +1,6 @@
 # dotfiles
 
-My dotfiles for Linux and Mac.
+Extensible dotfiles for Linux and Mac.
 
 ## highlights
 
@@ -10,10 +10,9 @@ My dotfiles for Linux and Mac.
 - [`asdf`](https://asdf-vm.com/)
 - [`z`](https://github.com/rupa/z)
 - `e`: opens the text editor configured in the `EDITOR` variable.
+- `c <tab>`, go to my code folders.
 - `update`: updates software (runs all `*/update.sh` files).
 - `pubkey`: copy `~/.ssh/id_rsa.pub` to clipboard.
-- `c <tab>`, go to my code folders.
-- `extract <file>`: knows how to unzip several formats.
 
 ---
 
@@ -56,7 +55,7 @@ Using extensions:
 
 ```sh
 # within the dotfiles
-mkdir extensions && cd extensions
+cd extensions
 
 # add as many extensions projects you want
 git clone https://github.com/<username>/<dotfiles-extension-personal>.git
