@@ -21,7 +21,7 @@ Extensible dotfiles for Linux and Mac.
 ```sh
 git clone https://github.com/rafaeleyng/dotfiles.git ~/.dotfiles && cd ~/.dotfiles
 
-./install.sh
+./install
 ```
 
 ---
@@ -40,9 +40,9 @@ Notable folders:
 
 - `*/path.zsh`: files that get loaded into your environment when a shell is loaded, before `*/index.zsh` are loaded. These files should only set path variables.
 - `*/index.zsh`: files that get loaded into your environment when a shell is loaded.
-- `*/*.symlink`: files that get symlinked (without the `*.symlink` extension) into your `$HOME` when you run `./install.sh`.
-- `*/install.sh`: files that are run when you run `./install.sh`.
-- `*/update.sh`: files that are run when you run `./update.sh`.
+- `*/*.symlink`: files that get symlinked (without the `*.symlink` extension) into your `$HOME` when you run `./install`.
+- `*/install.sh`: files that are run when you run `./install`.
+- `*/update.sh`: files that are run when you run `./update`.
 
 Combined with the patterns above, files with the added suffix `.macos` or `.linux` will only be applied to when running on that OS.
 
@@ -66,7 +66,7 @@ cd ..
 # run this script to:
 #   - install any dependencies (`install.sh` files) defined in the extensions;
 #   - link `*.symlink` files from the extensions to the home directory.
-install.sh
+./install
 ```
 
 Inside the extensions you can have any of the [special files](#special-files), and they will be processed accordingly.
