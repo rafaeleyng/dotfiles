@@ -1,7 +1,8 @@
 #!/bin/zsh
 
 shellcheck --exclude=SC1071 \
-  ./scripts/*.sh \
+  ./install \
+  ./update \
   ./features/*.sh \
   ./features/*/*.*sh \
   ./features/*/*.*sh.linux \
