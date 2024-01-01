@@ -3,4 +3,4 @@
 # run `update` periodically to update the dependencies
 
 DOTFILES="$HOME/.dotfiles"
-$DOTFILES/scripts/update.sh
+$DOTFILES/update

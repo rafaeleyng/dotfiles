@@ -1,9 +1,31 @@
 #!/bin/bash
 #
-# links all *.symlink files (except for git)
+# runs all install.sh files
+
+set -e
 
 DOTFILES="$HOME/.dotfiles"
 source "$DOTFILES"/features/utils.sh
+export -f info # export to be used in the find/exec subshell
+OS_SUFFIX=$(os_suffix)
+
+setup_gitconfig () {
+  if ! [ -f features/git/gitconfig-local.symlink ]; then
+  info "Installing gitconfig files"
+
+    user ' - What is your github author name?'
+    read -r -e git_authorname
+    user ' - What is your github author email?'
+    read -r -e git_authoremail
+
+    sed \
+      -e "s/AUTHORNAME/$git_authorname/g" \
+      -e "s/AUTHOREMAIL/$git_authoremail/g" \
+      features/git/gitconfig-local.symlink.example > features/git/gitconfig-local.symlink
+
+    success 'gitconfig'
+  fi
+}
 
 link_file () {
   local SRC=$1 DST=$2
@@ -73,13 +95,11 @@ link_files () {
 
   local overwrite_all=false backup_all=false skip_all=false
 
-  OS_SUFFIX=$(os_suffix)
-
   local FILES
   FILES=$(find \
     -H "$DOTFILES/features" "$DOTFILES/extensions" \
-    -type f \
     -maxdepth 4 \
+    -type f \
     \( -name "*.symlink" -o -name "*.symlink.$OS_SUFFIX" \) \
     -not -path '*.git*')
 
@@ -96,6 +116,18 @@ link_files () {
   done
 }
 
-link_files
+exec_installs () {
+  find \
+    -H "$DOTFILES/features" "$DOTFILES/extensions" \
+    -maxdepth 4 \
+    -type f \
+    \( -name "install.sh" -o -name "install.sh.$OS_SUFFIX" \) \
+    -not -path '*.git*' \
+    -exec bash -c 'FILE="$0"; info "$FILE"; "$FILE"' {} ';'
+}
 
-success 'setup-symlinks.sh finished'
+setup_gitconfig
+link_files
+exec_installs
+
+success 'install finished'

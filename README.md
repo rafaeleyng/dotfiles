@@ -1,6 +1,6 @@
 # dotfiles
 
-My dotfiles for Linux and Mac.
+Extensible dotfiles for Linux and Mac.
 
 ## highlights
 
@@ -10,10 +10,9 @@ My dotfiles for Linux and Mac.
 - [`asdf`](https://asdf-vm.com/)
 - [`z`](https://github.com/rupa/z)
 - `e`: opens the text editor configured in the `EDITOR` variable.
+- `c <tab>`, go to my code folders.
 - `update`: updates software (runs all `*/update.sh` files).
 - `pubkey`: copy `~/.ssh/id_rsa.pub` to clipboard.
-- `c <tab>`, go to my code folders.
-- `extract <file>`: knows how to unzip several formats.
 
 ---
 
@@ -22,7 +21,7 @@ My dotfiles for Linux and Mac.
 ```sh
 git clone https://github.com/rafaeleyng/dotfiles.git ~/.dotfiles && cd ~/.dotfiles
 
-./scripts/setup.sh
+./install.sh
 ```
 
 ---
@@ -36,17 +35,16 @@ Notable folders:
 - `features`: each subfolder contains configuration for some feature. Notable examples:
   - `bin/`: files are added to `$PATH` and made available everywhere, and are executed in a child process.
   - `functions/`: files are added to `$fpath` and made available everywhere, and are executed in the current process.
-- `scripts`: scripts that you can run manually, to either install this dotfiles project or install/update the dependencies it specifies.
 
 ### special files
 
 - `*/path.zsh`: files that get loaded into your environment when a shell is loaded, before `*/index.zsh` are loaded. These files should only set path variables.
 - `*/index.zsh`: files that get loaded into your environment when a shell is loaded.
-- `*/*.symlink`: files that get symlinked (without the `*.symlink` extension) into your `$HOME` when you run `./scripts/setup.sh`.
-- `*/install.sh`: files that are run when you run `./scripts/install.sh` (and also `./scripts/setup.sh`).
-- `*/update.sh`: files that are run when you run `./scripts/update.sh`.
+- `*/*.symlink`: files that get symlinked (without the `*.symlink` extension) into your `$HOME` when you run `./install.sh`.
+- `*/install.sh`: files that are run when you run `./install.sh`.
+- `*/update.sh`: files that are run when you run `./update.sh`.
 
-For the 4 types above, files with the added suffix `.macos` or `.linux`, they will only be applied to when running on that OS.
+Combined with the patterns above, files with the added suffix `.macos` or `.linux` will only be applied to when running on that OS.
 
 ### extensions
 
@@ -56,7 +54,7 @@ Using extensions:
 
 ```sh
 # within the dotfiles
-mkdir extensions && cd extensions
+cd extensions
 
 # add as many extensions projects you want
 git clone https://github.com/<username>/<dotfiles-extension-personal>.git
@@ -68,7 +66,7 @@ cd ..
 # run this script to:
 #   - install any dependencies (`install.sh` files) defined in the extensions;
 #   - link `*.symlink` files from the extensions to the home directory.
-scripts/setup.sh
+install.sh
 ```
 
 Inside the extensions you can have any of the [special files](#special-files), and they will be processed accordingly.
