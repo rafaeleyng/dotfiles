@@ -6,7 +6,7 @@ source "$DOTFILES"/features/utils.sh
 
 TIME_START=$(os_time)
 
-local function compute_load_time () {
+local compute_load_time () {
   local START=$1
   if [[ $DOTFILES_DEBUG = "1" ]]; then
     END=$(os_time)
@@ -14,17 +14,17 @@ local function compute_load_time () {
   fi
 }
 
-local function source_local () {
+local source_local () {
   if [[ -a $DOTFILES/.local ]]; then
     source $DOTFILES/.local
   fi
 }
 
-local function source_zsh_index () {
+local source_zsh_index () {
   source "$ZSH_CONFIG"
 }
 
-function source_path_files () {
+source_path_files () {
   typeset -U FILES
 
   OS_SUFFIX=$(os_suffix)
@@ -37,7 +37,7 @@ function source_path_files () {
   unset FILES
 }
 
-function source_features_indexes () {
+source_features_indexes () {
   typeset -U FILES
 
   OS_SUFFIX=$(os_suffix)
@@ -52,7 +52,7 @@ function source_features_indexes () {
   unset FILES
 }
 
-function source_extensions () {
+source_extensions () {
   typeset -U FILES
 
   if find $DOTFILES/extensions -name 'index.zsh' -not -path '*.git*' &> /dev/null; then

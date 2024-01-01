@@ -7,8 +7,9 @@ set -e
 DOTFILES="$HOME/.dotfiles"
 source "$DOTFILES"/features/utils.sh
 export -f info # export to be used in the find/exec subshell
+OS_SUFFIX=$(os_suffix)
 
-function pull_dotfiles () {
+pull_dotfiles () {
   local BRANCH
   BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
@@ -22,17 +23,14 @@ function pull_dotfiles () {
   fi
 }
 
-function pull_extensions () {
+pull_extensions () {
   for FOLDER in "$DOTFILES"/extensions/*; do
     info "Pulling extension $FOLDER"
     git -C "$FOLDER" pull --rebase
   done
 }
 
-function exec_updates () {
-  local OS_SUFFIX
-  OS_SUFFIX=$(os_suffix)
-
+exec_updates () {
   find \
     -H "$DOTFILES/features" "$DOTFILES/extensions" \
     -maxdepth 4 \
@@ -47,4 +45,4 @@ pull_dotfiles
 pull_extensions
 exec_updates
 
-success 'update.sh finished'
+success 'update finished'
