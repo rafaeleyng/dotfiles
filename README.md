@@ -38,11 +38,11 @@ Notable folders:
 
 ### special files
 
-- `*/path.zsh`: files that get loaded into your environment when a shell is loaded, before `*/index.zsh` are loaded. These files should only set path variables.
-- `*/index.zsh`: files that get loaded into your environment when a shell is loaded.
-- `*/*.symlink`: files that get symlinked (without the `*.symlink` extension) into your `$HOME` when you run `./install`.
 - `*/install.sh`: files that are run when you run `./install`.
 - `*/update.sh`: files that are run when you run `./update`.
+- `*/*.symlink`: files that get symlinked (without the `*.symlink` extension) into your `$HOME` when you run `./install`.
+- `*/path.zsh`: files that get loaded into your environment when a shell is loaded, before `*/index.zsh` are loaded. These files should only set path variables.
+- `*/index.zsh`: files that get loaded into your environment when a shell is loaded.
 
 Combined with the patterns above, files with the added suffix `.macos` or `.linux` will only be applied to when running on that OS.
 
