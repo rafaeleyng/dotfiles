@@ -28,7 +28,8 @@ source_path_files () {
   typeset -U FILES
 
   OS_SUFFIX=$(os_suffix)
-  FILES=($DOTFILES/features/*/path.zsh.$OS_SUFFIX $DOTFILES/features/*/path.zsh)
+  setopt local_options null_glob
+  FILES=($DOTFILES/features/*/path.zsh.$OS_SUFFIX $DOTFILES/features/*/path.zsh $DOTFILES/extensions/**/path.zsh.$OS_SUFFIX $DOTFILES/extensions/**/path.zsh)
 
   for FILE in $FILES; do
     source $FILE
@@ -41,24 +42,8 @@ source_features_indexes () {
   typeset -U FILES
 
   OS_SUFFIX=$(os_suffix)
-  FILES=($DOTFILES/features/*/index.zsh.$OS_SUFFIX $DOTFILES/features/*/index.zsh)
-
-  for FILE in $FILES; do
-    if [ $FILE != $ZSH_CONFIG ]; then
-      source $FILE
-    fi
-  done
-
-  unset FILES
-}
-
-source_extensions () {
-  typeset -U FILES
-
-  if find $DOTFILES/extensions -name 'index.zsh' -not -path '*.git*' &> /dev/null; then
-    # include any extensions if present
-    FILES=($FILES $DOTFILES/extensions/*/*/index.zsh)
-  fi
+  setopt local_options null_glob
+  FILES=($DOTFILES/features/*/index.zsh.$OS_SUFFIX $DOTFILES/features/*/index.zsh $DOTFILES/extensions/**/index.zsh.$OS_SUFFIX $DOTFILES/extensions/**/index.zsh)
 
   for FILE in $FILES; do
     if [ $FILE != $ZSH_CONFIG ]; then
@@ -73,7 +58,6 @@ source_local               # 1. Load local-only variables (not commited).
 source_zsh_index           # 2. Load zsh config index.zsh file, which sets critical variables.
 source_path_files          # 3. Load files that define PATH. These are loaded before the features so they can rely on PATH being set correctly, without depending on loading order.
 source_features_indexes    # 4. Load features index.zsh files.
-source_extensions          # 5. Load index.zsh from extensions (doesn't take OS into account).
 
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit

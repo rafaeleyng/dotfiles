@@ -10,6 +10,4 @@ rafael-local.*
 # local history vs code extension
 .history/
 
-# TODO
-# because of /home/rafael/code/stickermule/diva/re-store/islands/stimulus/tsconfig.eslint.json
 tsconfig.eslint.json
