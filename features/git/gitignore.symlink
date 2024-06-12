@@ -1,13 +1,17 @@
 .DS_Store
 *~
 *.swp
-.idea/
-.vscode
 
 # I can prefix any file with `rafael-local.` to make it gitignored
 rafael-local.*
 
-# local history vs code extension
+# JetBrains
+.idea/
+
+# VSCode
+.vscode/
+.devcontainer/
+# local history extension
 .history/
 
 tsconfig.eslint.json
