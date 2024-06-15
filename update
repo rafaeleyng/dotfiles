@@ -11,11 +11,11 @@ OS_SUFFIX=$(os_suffix)
 
 pull_dotfiles () {
   local BRANCH
-  BRANCH=$(git rev-parse --abbrev-ref HEAD)
+  BRANCH=$(git -C "$DOTFILES" rev-parse --abbrev-ref HEAD)
 
   if [[ ! $BRANCH = "main" ]]; then
     info "Not on main branch, skipping pull_dotfiles"
-  elif [[ -n "$(git status --porcelain)" ]]; then
+  elif [[ -n "$(git -C "$DOTFILES" status --porcelain)" ]]; then
     info "Status not clean, skipping pull_dotfiles"
   else
     info "Pulling dotfiles"
