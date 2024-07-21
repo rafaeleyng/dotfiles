@@ -10,8 +10,9 @@ rafael-local.*
 
 # VSCode
 .vscode/
-.devcontainer/
+
 # local history extension
 .history/
 
 tsconfig.eslint.json
+.eslintcache
