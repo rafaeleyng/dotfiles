@@ -68,3 +68,4 @@ compute_load_time $TIME_START
 
 # TODO remove, only added temporarily for a course
 alias mygit="bun run /Users/rafael/code/rafael/codecrafters-git-typescript/app/main.ts"
+alias docker-compose="docker compose"
