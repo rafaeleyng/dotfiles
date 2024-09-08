@@ -14,5 +14,6 @@ rafael-local.*
 # local history extension
 .history/
 
+.eslintcache
 tsconfig.eslint.json
 .eslintcache
