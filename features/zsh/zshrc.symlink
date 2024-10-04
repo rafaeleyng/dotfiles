@@ -64,3 +64,4 @@ autoload -U compinit
 compinit
 
 compute_load_time $TIME_START
+eval "$(gh copilot alias -- zsh)"

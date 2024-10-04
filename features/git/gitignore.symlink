@@ -14,6 +14,10 @@ rafael-local.*
 # local history extension
 .history/
 
+# asdf version manager
+.tool-versions
+
+# eslint
 .eslintcache
 tsconfig.eslint.json
 .eslintcache
