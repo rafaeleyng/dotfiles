@@ -1,7 +1,3 @@
-[include]
-  path = ~/.gitconfig-local
-  path = ~/.gitconfig-extensions-personal
-  path = ~/.gitconfig-extensions-work
 [credential]
   helper = osxkeychain
 [color]
@@ -49,5 +45,7 @@
   gpgsign = true
 [gpg]
   format = ssh
-[user]
-  signingkey = ~/.ssh/id_ed25519.pub
+[include]
+  path = ~/.gitconfig-local
+  path = ~/.gitconfig-extensions-personal
+  path = ~/.gitconfig-extensions-work
