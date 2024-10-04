@@ -11,7 +11,7 @@
   ui = true
 [core]
   excludesfile = ~/.gitignore
-	editor = code --wait
+  editor = code --wait
   pager = delta
   quotePath = false
 [apply]
@@ -29,10 +29,10 @@
   # Setting to git 2.0 default to suppress warning message
   default = simple
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
+  smudge = git-lfs smudge -- %f
   required = true
-	clean = git-lfs clean -- %f
-	process = git-lfs filter-process
+  clean = git-lfs clean -- %f
+  process = git-lfs filter-process
 [pager]
   branch = false
   tag = false
@@ -44,10 +44,10 @@
 [interactive]
   diffFilter = delta --color-only
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [commit]
-	gpgsign = true
+  gpgsign = true
 [gpg]
-	format = ssh
+  format = ssh
 [user]
-	signingkey = ~/.ssh/id_ed25519.pub
+  signingkey = ~/.ssh/id_ed25519.pub
