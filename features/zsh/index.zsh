@@ -111,3 +111,8 @@ export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(e {})+abort'"
 # safe-rm
 ########################################
 alias rm="safe-rm"
+
+########################################
+# homebrew
+########################################
+HOMEBREW_NO_AUTO_UPDATE=1
