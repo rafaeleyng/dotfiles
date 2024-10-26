@@ -1,6 +1,6 @@
 #!/bin/zsh
 
 ########################################
-# asdf - https://asdf-vm.com/
+# homebrew
 ########################################
-source $(brew --prefix asdf)/libexec/asdf.sh
+HOMEBREW_NO_AUTO_UPDATE=1

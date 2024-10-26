@@ -89,7 +89,6 @@ export PROJECTS=~/code
 # aliases
 ########################################
 alias a='asdf'
-alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'" # copy public key to clipboard
 
 ########################################
 # fzf - https://github.com/junegunn/fzf
@@ -113,6 +112,11 @@ export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(e {})+abort'"
 alias rm="safe-rm"
 
 ########################################
-# homebrew
+# asdf - https://asdf-vm.com/
 ########################################
-HOMEBREW_NO_AUTO_UPDATE=1
+source $(brew --prefix asdf)/libexec/asdf.sh
+
+########################################
+# gh - https://cli.github.com/
+########################################
+eval "$(gh copilot alias -- zsh)"
