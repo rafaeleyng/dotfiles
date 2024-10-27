@@ -1,6 +1,7 @@
 #!/bin/bash
 #
-# runs all install.sh files
+# This one has to use bash.
+# Runs all install.sh files
 
 set -e
 
@@ -101,7 +102,8 @@ link_files () {
     -maxdepth 4 \
     -type f \
     \( -name "*.symlink" -o -name "*.symlink.$OS_SUFFIX" \) \
-    -not -path '*.git*')
+    -not -path '*.git/*' \
+    -not -path '*.history/*')
 
   for SRC in $FILES; do
     # either remove .symlink or OS suffix
@@ -123,6 +125,7 @@ exec_installs () {
     -type f \
     \( -name "install.sh" -o -name "install.sh.$OS_SUFFIX" \) \
     -not -path '*.git*' \
+    -not -path '*.history/*' \
     -exec bash -c 'FILE="$0"; info "$FILE"; "$FILE"' {} ';'
 }
 
