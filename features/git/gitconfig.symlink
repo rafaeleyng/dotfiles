@@ -47,7 +47,13 @@
   format = ssh
 [user]
   signingkey = ~/.ssh/id_ed25519.pub
+[url "git@github.com:"]
+  insteadOf = https://github.com/
 [include]
   path = ~/.gitconfig-local
-  path = ~/.gitconfig-extensions-personal
-  path = ~/.gitconfig-extensions-work
+  # Include additional configuration files.
+  # This has to be hardcoded since git doesn't support including with wildcards.
+  # I'm adding a few placeholders to have some leeway. Extensions that want to use these should
+  # have .symlink files with the same name.
+  path = ~/.gitconfig-extensions-1
+  path = ~/.gitconfig-extensions-2
