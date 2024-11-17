@@ -120,3 +120,4 @@ source $(brew --prefix asdf)/libexec/asdf.sh
 # gh - https://cli.github.com/
 ########################################
 eval "$(gh copilot alias -- zsh)"
+alias want="gh copilot suggest -t shell"
