@@ -8,6 +8,7 @@ brew 'bat' # cat
 brew 'coreutils' # https://apple.stackexchange.com/questions/69223/how-to-replace-mac-os-x-utilities-with-gnu-core-utilities
 brew 'fd' # find
 brew 'fzf' # fuzzy finder
+brew 'gh'
 brew 'git-delta'
 brew 'jq'
 brew 'openssl'
