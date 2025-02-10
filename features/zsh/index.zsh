@@ -113,11 +113,6 @@ export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(e {})+abort'"
 alias rm="safe-rm"
 
 ########################################
-# asdf - https://asdf-vm.com/
-########################################
-source $(brew --prefix asdf)/libexec/asdf.sh
-
-########################################
 # gh - https://cli.github.com/
 ########################################
 eval "$(gh copilot alias -- zsh)"
