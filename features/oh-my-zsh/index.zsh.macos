@@ -1,3 +1,4 @@
 #!/bin/zsh
 
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
