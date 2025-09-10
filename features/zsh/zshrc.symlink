@@ -94,3 +94,11 @@ setopt HIST_IGNORE_SPACE
 # don't expand aliases _before_ completion has finished
 #   like: git comm-[tab]
 # setopt complete_aliases
+
+# pnpm
+export PNPM_HOME="/Users/rafael/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
