@@ -14,6 +14,9 @@ rafael-local.*
 # local history extension
 .history/
 
+# Claude Code
+CLAUDE.md
+
 # asdf version manager
 .tool-versions
 
