@@ -21,6 +21,7 @@ brew 'zsh'
 
 cask '1password'
 cask 'anki'
+cask 'claude-code'
 cask 'docker'
 cask 'iterm2'
 cask 'rectangle'
